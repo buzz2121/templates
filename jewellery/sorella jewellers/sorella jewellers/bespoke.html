@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Inquiry | SORELLA GEMS Luxury Jewellery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (min-width: 769px) {
+            .bespoke-hero-grid {
+                display: grid !important;
+                grid-template-columns: 2fr 3fr;
+                gap: 60px;
+                align-items: center;
+                padding-top: 120px;
+                padding-bottom: 150px;
+            }
+
+            .bespoke-hero-visual {
+                height: 80vh;
+                min-height: 600px;
+            }
+
+            .bespoke-layout {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr;
+                min-height: 100vh;
+                padding: 0 var(--space-container);
+                gap: 60px;
+            }
+
+            .bespoke-visual {
+                background-image: url('custom_design_thumb_1777521998635.png');
+                background-size: cover;
+                background-position: center;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+            }
+
+            .bespoke-form-container {
+                padding: var(--space-header-top) var(--space-container) var(--space-section);
+                background: var(--primary);
+            }
+        }
+
+        .form-header {
+            margin-bottom: 60px;
+        }
+
+        .form-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 35px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 18px;
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.08);
+            font-family: inherit;
+            font-size: 14px;
+            transition: var(--transition-lux);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 5px 20px rgba(198, 169, 114, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .bespoke-hero-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                padding-top: 100px !important;
+                padding-bottom: 40px !important;
+                min-height: auto !important;
+                gap: 30px !important;
+            }
+            .bespoke-hero-visual {
+                height: 350px !important;
+                min-height: auto !important;
+                width: 100% !important;
+                order: -1 !important;
+            }
+            .bespoke-layout {
+                grid-template-columns: 1fr;
+                padding: 0;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .bespoke-visual {
+                height: 300px !important;
+                position: relative !important;
+                order: -1 !important;
+                width: 100% !important;
+            }
+            .bespoke-form-container {
+                padding: 40px var(--space-container) !important;
+                width: 100% !important;
+            }
+            .journey-steps div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            form div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            header .container > div:first-child {
+                padding: 40px 0 !important;
+                border-left: none !important;
+                border-top: 1px solid var(--accent) !important;
+            }
+            header h1 { font-size: 42px !important; }
+            section .container > div[style*="display: flex"] {
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+            section img { height: 400px !important; width: 100% !important; }
+            section div[style*="position: absolute"] {
+                position: static !important;
+                width: 100% !important;
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">Sorella Gems</a>
+        
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="bespoke.html" class="active">Bespoke</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="cta-button">
+                Book Consultation
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="bespoke.html">Bespoke</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: 40px; width: auto;">Book Consultation</a>
+    </div>
+
+    <header style="background: var(--primary); position: relative; overflow: hidden; display: flex; align-items: center;">
+        <div class="container bespoke-hero-grid mobile-stack">
+            <!-- Left: Typography Column -->
+            <div style="z-index: 2; padding: 60px 0 60px 40px; border-left: 1px solid var(--accent); display: flex; flex-direction: column; justify-content: center;">
+                <span style="font-size: 12px; letter-spacing: 6px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 30px;">The Bespoke Experience</span>
+                <h1 style="font-size: 72px; line-height: 1.1; margin-bottom: 40px; color: var(--text) !important; font-family: 'Cinzel', serif;">Craft Your<br>Dream</h1>
+                <div style="width: 1px; height: 60px; background: var(--accent); margin-bottom: 40px;"></div>
+                <p style="font-size: 18px; color: var(--text-muted); max-width: 420px; font-family: 'Playfair Display', serif; font-style: italic;">Collaborate with our master designers to create a one-of-a-kind masterpiece.</p>
+                
+                <div style="margin-top: 60px; display: flex; gap: 40px;">
+                    <div>
+                        <h4 style="font-size: 11px; letter-spacing: 3px; margin-bottom: 10px;">STUDIO</h4>
+                        <p style="font-size: 13px;">Paris Atelier</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 11px; letter-spacing: 3px; margin-bottom: 10px;">PROCESS</h4>
+                        <p style="font-size: 13px;">4-8 Weeks</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Cinematic Visual Column -->
+            <div class="bespoke-hero-visual" style="position: relative; overflow: hidden; box-shadow: var(--shadow-soft);">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('./bespoke_atelier_process_lux.png'); background-size: cover; background-position: center;"></div>
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(248, 245, 240, 0.15), transparent);"></div>
+                
+                <!-- Architectural Floating Badge -->
+                <div style="position: absolute; bottom: 40px; right: 40px; z-index: 10; display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.8); backdrop-filter: blur(15px); padding: 15px 25px; border: 1px solid var(--accent);">
+                    <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                    <span style="font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--text);">Private Commission Master-Studio</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="bespoke-layout">
+        <div class="bespoke-visual"></div>
+        <div class="bespoke-form-container">
+            <div class="form-header">
+                <span style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 20px;">Private Commission</span>
+                <h2 style="font-size: 36px; margin-bottom: 30px; font-family: 'Cinzel', serif;">The Consultation</h2>
+                <p style="margin-bottom: 50px; font-size: 15px; color: var(--text-muted);">Please provide details about your vision. A master consultant from our London or Paris atelier will curate a personalized response.</p>
+            </div>
+
+            <!-- Bespoke Journey Steps -->
+            <div class="journey-steps" style="margin-bottom: 80px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 40px;">
+                <div class="mobile-stack" style="display: flex; gap: 40px;">
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif;">01. Private Consultation</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">A one-on-one session to discuss your inspiration and preferred gemstones.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif;">02. Design Conceptualization</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Our designers present high-fidelity 3D renderings and material samples.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif;">03. The Unveiling</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">After 12 weeks of meticulous crafting, your masterpiece is revealed in a private viewing room.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--accent); margin-bottom: 10px; font-family: 'Cinzel', serif;">04. Lifetime Concierge</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Complimentary annual cleaning and inspection services for your creation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="bespokeForm">
+                <div class="mobile-stack" style="display: flex; gap: 30px;">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="Julian" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Sorella Gems" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="julian@Sorella Gems.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>What are you looking to create?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item"><input type="checkbox"> <span>Engagement Ring</span></div>
+                        <div class="checkbox-item"><input type="checkbox"> <span>Necklace</span></div>
+                        <div class="checkbox-item"><input type="checkbox"> <span>Earrings</span></div>
+                        <div class="checkbox-item"><input type="checkbox"> <span>Bracelet</span></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Vision</label>
+                    <textarea rows="6" placeholder="Describe the occasion, preferred metals, and gemstones..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Estimated Budget</label>
+                    <select>
+                        <option>$5,000 - $10,000</option>
+                        <option>$10,000 - $25,000</option>
+                        <option>$25,000 - $50,000</option>
+                        <option>$50,000+</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                <p style="text-align: center; font-size: 12px; margin-top: 25px; color: #999;">A private consultant will reach out to you within 48 hours.</p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Artisanal Soul Section -->
+    <section class="container reveal" style="padding-top: 150px; padding-bottom: 100px;">
+        <div class="mobile-stack" style="display: flex; align-items: center; gap: 100px;">
+            <div class="mobile-full-width">
+                <span style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent);">Our Experts</span>
+                <h2 style="font-size: 48px; margin: 20px 0; font-family: 'Playfair Display', serif;">The Artisanal Soul</h2>
+                <p style="margin-bottom: 40px; font-size: 16px; line-height: 1.8;">When you commission an Sorella Gems piece, you gain access to the world's most skilled artisans. From diamond cutters who specialize in our proprietary **"Aurora Cut"** to master engravers who can tell an entire family history in a single band of gold.</p>
+                <div class="mobile-stack" style="display: flex; gap: 40px;">
+                    <div>
+                        <h4 style="font-size: 14px; margin-bottom: 10px; font-family: 'Cinzel', serif;">Tailored Gems</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">We source specific cuts from De Beers sightholders to ensure your vision is uncompromising and ethical.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 14px; margin-bottom: 10px; font-family: 'Cinzel', serif;">Heritage Metals</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Choose from our proprietary Aurora Gold or pure ethical Platinum for the ultimate foundation of your legacy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-full-width" style="position: relative;">
+                <img src="./bespoke_process_1777522019445.png" alt="Process" style="width: 100%; height: 700px; object-fit: cover; border: 1px solid rgba(198,169,114,0.1);">
+                <div class="mobile-full-width" style="position: absolute; bottom: -30px; left: -30px; background: var(--accent); color: var(--white); padding: 40px; width: 250px;">
+                    <p style="font-size: 12px; font-style: italic;">“Every bespoke piece is a conversation between the soul of the stone and the hand of the master.”</p>
+                    <p style="margin-top: 15px; font-size: 10px; text-transform: uppercase; letter-spacing: 2px;">— Julian Sorella Gems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo footer-logo">Sorella Gems</a>
+                    <p style="max-width: 300px;">Crafting timeless luxury jewellery that celebrates the artistry of life.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="collections.html#bridal">Bridal</a></li>
+                        <li><a href="collections.html#diamond">Diamonds</a></li>
+                        <li><a href="collections.html#gold">Gold Classics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html#craft">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Concierge</h4>
+                    <p style="font-size: 13px; margin-bottom: 20px;">Join our exclusive circle for early access.</p>
+                    <a href="bespoke.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 10px;">Inquire Now</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Sorella Gems JEWELLERY HOUSE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        document.getElementById('bespokeForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your dream piece has been initiated. A consultant will contact you shortly.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

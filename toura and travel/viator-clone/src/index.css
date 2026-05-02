@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* DatePicker Overrides */
+.react-datepicker {
+  @apply rounded-2xl border-none shadow-2xl font-sans overflow-hidden;
+}
+.react-datepicker__header {
+  @apply bg-slate-900 text-white border-none py-4;
+}
+.react-datepicker__current-month, .react-datepicker__day-name {
+  @apply text-white font-black uppercase text-[10px] tracking-widest;
+}
+.react-datepicker__day--selected {
+  @apply bg-yellow-400 text-slate-900 font-black rounded-lg;
+}
+.react-datepicker__day--keyboard-selected {
+  background-color: rgba(250, 204, 21, 0.5) !important;
+}
+.react-datepicker__day:hover {
+  @apply bg-slate-100 rounded-lg;
+}

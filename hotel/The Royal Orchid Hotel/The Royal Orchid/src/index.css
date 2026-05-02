@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-cormorant: "Cormorant Garamond", serif;
+  --font-serif-playfair: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-royal-dark: #0a0a0a;
+  --color-royal-gold: #D4AF37;
+  --color-royal-gold-light: #F3E5AB;
+  --color-royal-white: #f5f2ed;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-royal-dark text-royal-white overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif-cormorant;
+  }
+}
+
+/* Custom scrollbar for horizontal sections */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Style native calendar picker indicator */
+input::-webkit-calendar-picker-indicator {
+    filter: invert(72%) sepia(51%) saturate(546%) hue-rotate(1deg) brightness(91%) contrast(85%);
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+input::-webkit-calendar-picker-indicator:hover {
+    opacity: 0.7;
+}

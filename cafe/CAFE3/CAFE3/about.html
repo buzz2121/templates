@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story & Chefs | Aurel Fine Dining</title>
+  <meta name="description" content="Meet the culinary team behind Aurel — Executive Chef Margaux Dubois and her brigade of passionate artisans." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1a1a1a', cream: '#f8f5f0', gold: '#c19d68',
+            'gold-dark': '#a07d4a', 'gold-light': '#d4b896',
+            'charcoal-light': '#2e2e2e', 'charcoal-mid': '#3d3d3d',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Jost', 'Inter', 'sans-serif'],
+            script: ['Dancing Script', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-charcoal font-sans overflow-x-hidden">
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="fixed inset-0 z-[9999] bg-charcoal flex flex-col items-center justify-center">
+    <div class="loader-logo font-serif text-4xl text-cream tracking-widest mb-8 opacity-0">AUREL</div>
+    <div class="loader-bar-track w-48 h-px bg-charcoal-mid relative overflow-hidden">
+      <div class="loader-bar absolute top-0 left-0 h-full w-full bg-gold origin-left scale-x-0"></div>
+    </div>
+    <div class="loader-tagline font-sans text-xs text-gold tracking-[0.3em] mt-6 opacity-0 uppercase">Fine Dining</div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50">
+    <nav class="nav-container flex items-center justify-between px-8 py-6 lg:px-16 transition-all duration-500">
+      <a href="index.html" class="font-serif text-2xl text-cream tracking-[0.2em] hover:text-gold transition-colors duration-300">AUREL</a>
+      <ul class="hidden lg:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Home</a></li>
+        <li><a href="menu.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Menu</a></li>
+        <li><a href="about.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300 active-link">Our Story</a></li>
+        <li><a href="booking.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Reserve</a></li>
+      </ul>
+      <div class="flex items-center gap-6">
+        <button id="cart-toggle" class="relative p-2 text-cream hover:text-gold transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count hidden">0</span>
+        </button>
+        <a href="booking.html" class="hidden lg:inline-block btn-gold">Book a Table</a>
+        <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-4 h-px bg-gold transition-all duration-300"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div id="mobile-nav" class="fixed inset-0 z-40 bg-charcoal flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+    <nav class="flex flex-col items-center gap-10">
+      <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Home</a>
+      <a href="menu.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Menu</a>
+      <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Our Story</a>
+      <a href="booking.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Reserve</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ABOUT HERO PARALLAX -->
+    <section class="relative h-[70vh] flex items-end pb-20 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/restaurant-interior.jpg"
+             alt="Aurel restaurant interior"
+             class="w-full h-full object-cover scale-110 parallax-img" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
+      </div>
+      <div class="relative z-10 px-8 lg:px-20 reveal-item">
+        <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Est. 2019</span>
+        <h1 class="font-serif text-cream text-6xl lg:text-8xl mt-4 leading-tight">Our Story</h1>
+      </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="py-32 px-8 lg:px-20 bg-charcoal reveal-section">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">The Beginning</span>
+          <h2 class="font-serif text-cream text-5xl mt-4 mb-8 leading-tight">Born From a <em>Passion</em> for the Plate</h2>
+          <p class="font-sans text-cream/60 text-base leading-relaxed mb-6">Aurel was born in 2019 from a shared dream between two chefs who believed fine dining need not be cold, stiff, or inaccessible. We wanted a space that felt like home — warm, intentional, and filled with the intoxicating aroma of great cooking.</p>
+          <p class="font-sans text-cream/60 text-base leading-relaxed mb-6">Our name, derived from the Latin <em>aureus</em> — meaning golden — is a promise: every plate that leaves our kitchen carries within it the golden standard of care, creativity, and craftsmanship.</p>
+          <p class="font-sans text-cream/60 text-base leading-relaxed">Today, Aurel seats 40 guests in an intimate, candlelit setting. We change our menu with the seasons, honouring what the earth provides and reducing waste to almost nothing.</p>
+        </div>
+        <div class="relative reveal-item">
+          <img src="images/restaurant-detail.jpg"
+               alt="Restaurant detail" class="w-full h-[550px] object-cover" />
+          <div class="absolute -top-8 -left-8 w-48 h-48 border border-gold hidden lg:block"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARALLAX CHEF QUOTE -->
+    <section class="relative py-48 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/hero-bg.jpg"
+             alt="Kitchen at work"
+             class="w-full h-full object-cover scale-110 parallax-img-section" />
+        <div class="absolute inset-0 bg-charcoal/85"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto px-8 text-center reveal-item">
+        <p class="font-sans text-gold text-xs tracking-[0.5em] uppercase mb-6">Our Ethos</p>
+        <blockquote class="font-serif text-cream text-3xl lg:text-5xl italic leading-relaxed">"Simplicity is the ultimate sophistication — especially on a plate."</blockquote>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE CHEF SIGNATURE SECTION -->
+    <section class="py-32 px-8 lg:px-20 bg-cream reveal-section">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Meet the Team</span>
+          <h2 class="font-serif text-charcoal text-5xl mt-4">The Culinary Brigade</h2>
+        </div>
+
+        <!-- Executive Chef Feature -->
+        <div class="grid lg:grid-cols-2 gap-0 mb-24 reveal-item">
+          <div class="relative overflow-hidden h-[600px]">
+            <img src="images/chef-margaux.jpg"
+                 alt="Executive Chef Margaux Dubois"
+                 class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" />
+          </div>
+          <div class="bg-charcoal p-12 lg:p-16 flex flex-col justify-center">
+            <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Executive Chef</span>
+            <h3 class="font-serif text-cream text-4xl lg:text-5xl mt-4 mb-2">Margaux Dubois</h3>
+            <!-- Handwritten signature -->
+            <p class="font-script text-gold text-5xl mt-2 mb-8">Margaux</p>
+            <p class="font-sans text-cream/60 text-base leading-relaxed mb-6">Trained at the Institut Paul Bocuse in Lyon and honed under three Michelin-starred chefs across Paris and Copenhagen, Margaux brings a philosophy that is both rigorously classical and daringly modern.</p>
+            <p class="font-sans text-cream/60 text-base leading-relaxed mb-8">Her signature style: stripping dishes back to their essence, then rebuilding with one unexpected, transcendent element.</p>
+            <div class="flex gap-6 text-center">
+              <div>
+                <p class="font-serif text-gold text-3xl font-semibold">3★</p>
+                <p class="font-sans text-cream/40 text-xs uppercase tracking-wider mt-1">Michelin Stars</p>
+              </div>
+              <div class="w-px bg-charcoal-mid"></div>
+              <div>
+                <p class="font-serif text-gold text-3xl font-semibold">20</p>
+                <p class="font-sans text-cream/40 text-xs uppercase tracking-wider mt-1">Years in Kitchen</p>
+              </div>
+              <div class="w-px bg-charcoal-mid"></div>
+              <div>
+                <p class="font-serif text-gold text-3xl font-semibold">8</p>
+                <p class="font-sans text-cream/40 text-xs uppercase tracking-wider mt-1">Cookbooks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supporting Chefs Grid -->
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="chef-card reveal-item text-center group">
+            <div class="overflow-hidden h-72 mb-6">
+              <img src="images/chef-julien.jpg"
+                   alt="Sous Chef Julien"
+                   class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+            </div>
+            <span class="font-sans text-gold text-xs tracking-widest uppercase">Sous Chef</span>
+            <h4 class="font-serif text-charcoal text-2xl mt-2">Julien Moreau</h4>
+            <p class="font-script text-gold text-3xl mt-1">Julien</p>
+            <p class="font-sans text-charcoal/60 text-sm mt-3 max-w-xs mx-auto">Pastry-turned-savoury, Julien blurs the line between courses with his surprising flavour bridges.</p>
+          </div>
+          <div class="chef-card reveal-item text-center group" style="margin-top:40px">
+            <div class="overflow-hidden h-72 mb-6">
+              <img src="images/chef-camille.jpg"
+                   alt="Sommelier Camille"
+                   class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+            </div>
+            <span class="font-sans text-gold text-xs tracking-widest uppercase">Head Sommelier</span>
+            <h4 class="font-serif text-charcoal text-2xl mt-2">Camille Arnaud</h4>
+            <p class="font-script text-gold text-3xl mt-1">Camille</p>
+            <p class="font-sans text-charcoal/60 text-sm mt-3 max-w-xs mx-auto">With a cellar of over 800 labels, Camille's pairings are her love letters to the meal.</p>
+          </div>
+          <div class="chef-card reveal-item text-center group">
+            <div class="overflow-hidden h-72 mb-6">
+              <img src="images/chef-eloise.jpg"
+                   alt="Pastry Chef Eloise"
+                   class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+            </div>
+            <span class="font-sans text-gold text-xs tracking-widest uppercase">Pastry Chef</span>
+            <h4 class="font-serif text-charcoal text-2xl mt-2">Eloise Petit</h4>
+            <p class="font-script text-gold text-3xl mt-1">Eloise</p>
+            <p class="font-sans text-charcoal/60 text-sm mt-3 max-w-xs mx-auto">A former architect, Eloise constructs desserts that are as breathtaking to look at as to taste.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS ROW -->
+    <section class="py-24 bg-charcoal-light reveal-section">
+      <div class="max-w-7xl mx-auto px-8 lg:px-20">
+        <div class="text-center mb-16 reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Recognition</span>
+          <h2 class="font-serif text-cream text-4xl mt-4">Awards & Accolades</h2>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <div class="reveal-item">
+            <div class="text-gold text-4xl mb-4">★★★</div>
+            <p class="font-serif text-cream text-lg">Michelin Guide</p>
+            <p class="font-sans text-cream/40 text-sm">2023, 2024, 2025</p>
+          </div>
+          <div class="reveal-item">
+            <div class="text-gold text-4xl mb-4">✦</div>
+            <p class="font-serif text-cream text-lg">World's 50 Best</p>
+            <p class="font-sans text-cream/40 text-sm">Ranked #12 – 2024</p>
+          </div>
+          <div class="reveal-item">
+            <div class="text-gold text-4xl mb-4">◆</div>
+            <p class="font-serif text-cream text-lg">James Beard Award</p>
+            <p class="font-sans text-cream/40 text-sm">Best New Restaurant 2022</p>
+          </div>
+          <div class="reveal-item">
+            <div class="text-gold text-4xl mb-4">♦</div>
+            <p class="font-serif text-cream text-lg">Wine Spectator</p>
+            <p class="font-sans text-cream/40 text-sm">Grand Award 2023</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-charcoal text-center reveal-section">
+      <div class="reveal-item">
+        <h2 class="font-serif text-cream text-5xl mb-6">Experience It Yourself</h2>
+        <a href="booking.html" class="btn-gold">Reserve Your Table</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-charcoal border-t border-charcoal-mid py-20 px-8 lg:px-20">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+      <a href="index.html" class="font-serif text-2xl text-cream tracking-widest">AUREL</a>
+      <p class="font-sans text-cream/30 text-xs text-center">© 2025 Aurel Fine Dining. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="menu.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Menu</a>
+        <a href="booking.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Reserve</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Structures -->
+  <div id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="font-serif text-cream text-xl">Your Order</h3>
+      <button id="cart-close" class="text-cream/50 hover:text-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y1="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items-container" id="cart-items">
+      <p class="text-cream/30 text-center py-20 font-sans">Your basket is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="flex justify-between mb-4">
+        <span class="text-cream/50 font-sans">Subtotal</span>
+        <span class="text-cream font-serif text-xl" id="cart-total">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn-gold w-full flex items-center justify-center gap-3 disabled:opacity-50" disabled>
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="checkout-overlay">
+    <div class="checkout-modal reveal-item">
+      <button id="modal-close" class="absolute top-4 right-4 text-charcoal/50 hover:text-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y1="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div id="checkout-form-container">
+        <h2 class="font-serif text-charcoal text-3xl mb-2">Finalise Order</h2>
+        <p class="font-sans text-charcoal/50 text-sm mb-10">Delivery or Collection within 45 minutes.</p>
+        
+        <form id="checkout-form" class="space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="float-label-group">
+              <input type="text" id="order-first-name" class="float-input" placeholder=" " required />
+              <label for="order-first-name" class="float-label">First Name</label>
+            </div>
+            <div class="float-label-group">
+              <input type="text" id="order-last-name" class="float-input" placeholder=" " required />
+              <label for="order-last-name" class="float-label">Last Name</label>
+            </div>
+          </div>
+          <div class="float-label-group">
+            <input type="text" id="order-address" class="float-input" placeholder=" " required />
+            <label for="order-address" class="float-label">Delivery Address</label>
+          </div>
+          <div class="float-label-group">
+            <input type="tel" id="order-phone" class="float-input" placeholder=" " required />
+            <label for="order-phone" class="float-label">Phone Number</label>
+          </div>
+          <button type="submit" class="btn-gold w-full text-center">Place Order</button>
+        </form>
+      </div>
+
+      <div id="order-success" class="hidden text-center py-12">
+        <div class="text-gold text-5xl mb-6">✓</div>
+        <h3 class="font-serif text-charcoal text-3xl mb-4">Order Received</h3>
+        <p class="font-sans text-charcoal/60">Your dinner is being prepared. We'll alert you when it's on its way.</p>
+        <button id="success-close" class="btn-charcoal mt-8">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

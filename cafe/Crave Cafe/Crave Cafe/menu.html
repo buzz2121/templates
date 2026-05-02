@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crave - Our Menu</title>
+  <meta name="title" content="Crave - Our Menu">
+  <meta name="description" content="Explore our exquisite menu featuring seasonal dishes, crafted with the finest ingredients.">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body id="top">
+
+  <!-- #PRELOADER -->
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Crave</p>
+  </div>
+
+  <!-- #TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+        <span class="span">Restaurant St, Delicious City, London 9578, UK</span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+        <span class="span">Daily : 8.00 am to 10.00 pm</span>
+      </div>
+
+      <a href="tel:+11234567890" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+        <span class="span">+1 123 456 7890</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="mailto:booking@crave.com" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+        <span class="span">booking@crave.com</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="160" height="50" alt="Crave - Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="./index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="160" height="50" alt="Crave - Home">
+        </a>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="./index.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Home</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="./menu.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+              <span class="span">Menus</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="./about.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">About Us</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="./chefs.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Our Chefs</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="./blog.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Blog</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="./contact.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Contact</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Visit Us</p>
+          <address class="body-4">
+            Restaurant St, Delicious City, <br>
+            London 9578, UK
+          </address>
+          <p class="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>
+          <a href="mailto:booking@crave.com" class="body-4 sidebar-link">booking@crave.com</a>
+          <div class="separator"></div>
+          <p class="contact-label">Booking Request</p>
+          <a href="tel:+88123123456" class="body-1 contact-number hover-underline">+88-123-123456</a>
+        </div>
+
+      </nav>
+
+      <a href="./index.html#reservation" class="btn btn-secondary">
+        <span class="text text-1">Find A Table</span>
+        <span class="text text-2" aria-hidden="true">Find A Table</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+  <main>
+    <article>
+
+      <!-- #PAGE HERO -->
+      <section class="page-hero" aria-label="menu page" id="menu-hero">
+        <div class="page-hero-bg">
+          <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+          <p class="page-hero-subtitle">Delicious & Amazing</p>
+          <h1 class="page-hero-title">Our Menu</h1>
+          <p class="page-hero-desc">Discover a curated selection of dishes crafted with the finest seasonal ingredients by our world-class chefs.</p>
+          <nav class="page-hero-breadcrumb" aria-label="breadcrumb">
+            <a href="./index.html">Home</a>
+            <span class="divider">/</span>
+            <span class="current">Menu</span>
+          </nav>
+          <div class="page-hero-line"></div>
+        </div>
+      </section>
+
+
+
+      <!-- #FILTER BAR -->
+      <section class="section" aria-label="menu filter" style="padding-block: 30px 0;">
+        <div class="container">
+          <div class="menu-filter-bar" id="menu-filter">
+            <button class="menu-filter-btn active" data-filter="all">All</button>
+            <button class="menu-filter-btn" data-filter="veg"><span class="diet-dot green"></span>Veg</button>
+            <button class="menu-filter-btn" data-filter="non-veg"><span class="diet-dot red"></span>Non-Veg</button>
+          </div>
+
+          <nav class="menu-category-nav" id="menu-category-nav" aria-label="menu categories">
+            <a href="#breakfast-menu" class="menu-category-link">Breakfast</a>
+            <a href="#lunch-menu" class="menu-category-link">Lunch</a>
+            <a href="#starters-menu" class="menu-category-link">Starters</a>
+            <a href="#desserts-menu" class="menu-category-link">Desserts</a>
+            <a href="#drinks-menu" class="menu-category-link">Drinks</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- #BREAKFAST -->
+      <section class="section menu" aria-label="breakfast menu" id="breakfast-menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">Rise & Dine</p>
+          <h2 class="headline-1 section-title text-center">Breakfast</h2>
+          <ul class="grid-list">
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/masala-dosa.png" width="100" height="100" loading="lazy" alt="Masala Dosa" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Masala Dosa</a></h3><span class="badge label-1">Popular</span><span class="span title-2">₹180</span></div>
+                  <p class="card-text label-1">Crispy rice-lentil crêpe stuffed with spiced potato filling, served with coconut chutney and sambar.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/indori-poha.png" width="100" height="100" loading="lazy" alt="Poha" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Indori Poha</a></h3><span class="span title-2">₹120</span></div>
+                  <p class="card-text label-1">Flattened rice tempered with mustard seeds, curry leaves, onions, peanuts, and fresh lime.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/chole-bhature.png" width="100" height="100" loading="lazy" alt="Chole Bhature" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Chole Bhature</a></h3><span class="badge label-1">Bestseller</span><span class="span title-2">₹200</span></div>
+                  <p class="card-text label-1">Spiced chickpea curry with fluffy deep-fried bread, pickled onions, and green chutney.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/keema-paratha.png" width="100" height="100" loading="lazy" alt="Keema Paratha" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Keema Paratha</a></h3><span class="span title-2">₹220</span></div>
+                  <p class="card-text label-1">Layered whole-wheat flatbread stuffed with spiced minced mutton, served with raita and pickle.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/idli-sambar.png" width="100" height="100" loading="lazy" alt="Idli Sambar" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Idli Sambar</a></h3><span class="span title-2">₹130</span></div>
+                  <p class="card-text label-1">Steamed rice cakes served with lentil vegetable stew and an assortment of chutneys.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/aloo-paratha.png" width="100" height="100" loading="lazy" alt="Aloo Paratha" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Aloo Paratha</a></h3><span class="span title-2">₹140</span></div>
+                  <p class="card-text label-1">Golden pan-fried flatbread stuffed with spiced mashed potato, served with butter, curd, and pickle.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/egg-bhurji.png" width="100" height="100" loading="lazy" alt="Egg Bhurji" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Egg Bhurji Pav</a></h3><span class="span title-2">₹160</span></div>
+                  <p class="card-text label-1">Spicy scrambled eggs with onions, tomatoes, green chillies, and fresh coriander, served with buttered pav.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/rava-upma.png" width="100" height="100" loading="lazy" alt="Upma" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Rava Upma</a></h3><span class="span title-2">₹110</span></div>
+                  <p class="card-text label-1">Semolina cooked with vegetables, mustard seeds, curry leaves, and cashews, served with chutney.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-view-more" data-view-more>
+            <span class="text text-1">View More</span>
+            <span class="text text-2" aria-hidden="true">View More</span>
+          </button>
+
+          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-3 move-anim">
+        </div>
+      </section>
+
+
+
+      <!-- #LUNCH -->
+      <section class="section menu bg-black-10" aria-label="lunch menu" id="lunch-menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">Afternoon Feast</p>
+          <h2 class="headline-1 section-title text-center">Lunch</h2>
+          <ul class="grid-list">
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/paneer-butter-masala.png" width="100" height="100" loading="lazy" alt="Paneer Butter Masala" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Paneer Butter Masala</a></h3><span class="badge label-1">Bestseller</span><span class="span title-2">₹280</span></div>
+                  <p class="card-text label-1">Soft paneer cubes in rich tomato-cashew gravy with butter and cream, served with naan.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/butter-chicken.png" width="100" height="100" loading="lazy" alt="Butter Chicken" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Butter Chicken</a></h3><span class="badge label-1">Signature</span><span class="span title-2">₹350</span></div>
+                  <p class="card-text label-1">Tandoori chicken in velvety tomato-butter sauce with kasuri methi, served with garlic naan.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/dal-makhani.png" width="100" height="100" loading="lazy" alt="Dal Makhani" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Dal Makhani</a></h3><span class="badge label-1">Chef's Pick</span><span class="span title-2">₹250</span></div>
+                  <p class="card-text label-1">Black lentils slow-cooked overnight with butter, cream, and aromatic spices, served with jeera rice.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/mutton-rogan-josh.png" width="100" height="100" loading="lazy" alt="Mutton Rogan Josh" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Mutton Rogan Josh</a></h3><span class="span title-2">₹420</span></div>
+                  <p class="card-text label-1">Tender mutton pieces slow-braised in Kashmiri chilli and yogurt gravy with whole spices.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/palak-paneer.png" width="100" height="100" loading="lazy" alt="Palak Paneer" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Palak Paneer</a></h3><span class="span title-2">₹260</span></div>
+                  <p class="card-text label-1">Cottage cheese cubes in a velvety spinach gravy with cream, garlic, and garam masala.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/chicken-biryani.png" width="100" height="100" loading="lazy" alt="Chicken Biryani" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Hyderabadi Chicken Biryani</a></h3><span class="badge label-1">Popular</span><span class="span title-2">₹380</span></div>
+                  <p class="card-text label-1">Dum-cooked basmati rice layered with spiced chicken, saffron, fried onions, and fresh mint.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/veg-thali.png" width="100" height="100" loading="lazy" alt="Veg Thali" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Rajasthani Veg Thali</a></h3><span class="span title-2">₹350</span></div>
+                  <p class="card-text label-1">Dal baati churma, gatte ki sabzi, ker sangri, bajra roti, rice, raita, and churma ladoo.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/goan-fish-curry.png" width="100" height="100" loading="lazy" alt="Fish Curry" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Goan Fish Curry</a></h3><span class="span title-2">₹360</span></div>
+                  <p class="card-text label-1">Fresh pomfret in tangy coconut-kokum curry with Goan spices, served with steamed rice.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-view-more" data-view-more>
+            <span class="text text-1">View More</span>
+            <span class="text text-2" aria-hidden="true">View More</span>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- #SPECIAL DISH -->
+      <section class="special-dish text-center" aria-labelledby="dish-label">
+        <div class="special-dish-banner">
+          <img src="./assets/images/special-dish-banner.jpg" width="940" height="900" loading="lazy" alt="special dish" class="img-cover">
+        </div>
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+            <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge" class="abs-img">
+            <p class="section-subtitle label-2" id="dish-label">Chef's Signature</p>
+            <h2 class="headline-1 section-title">Dum Biryani Royale</h2>
+            <p class="section-text">Slow-cooked fragrant basmati rice layered with saffron-marinated lamb, caramelized onions, rose petals, and kewra water — sealed and cooked on dum for hours. A royal Lucknowi masterpiece.</p>
+            <div class="wrapper">
+              <del class="del body-3">₹650</del>
+              <span class="span body-1">₹450</span>
+            </div>
+          </div>
+        </div>
+        <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1">
+        <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt="" class="shape shape-2">
+      </section>
+
+
+      <!-- #STARTERS & APPETIZERS -->
+      <section class="section menu" aria-label="starters menu" id="starters-menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">To Begin</p>
+          <h2 class="headline-1 section-title text-center">Starters & Appetizers</h2>
+          <ul class="grid-list">
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/paneer-tikka.png" width="100" height="100" loading="lazy" alt="Paneer Tikka" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Paneer Tikka</a></h3><span class="badge label-1">Popular</span><span class="span title-2">₹240</span></div>
+                  <p class="card-text label-1">Marinated cottage cheese cubes chargrilled with bell peppers, onions, and mint chutney.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/chicken-tikka.jpg" width="100" height="100" loading="lazy" alt="Chicken Tikka" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Chicken Tikka</a></h3><span class="badge label-1">Chef's Pick</span><span class="span title-2">₹280</span></div>
+                  <p class="card-text label-1">Boneless chicken marinated in yogurt and spices, charred in tandoor, served with green chutney.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/samosa.jpg" width="100" height="100" loading="lazy" alt="Samosa" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Punjabi Samosa</a></h3><span class="span title-2">₹120</span></div>
+                  <p class="card-text label-1">Crispy pastry filled with spiced potatoes and peas, served with tamarind and mint chutney.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/seekh-kebab.jpg" width="100" height="100" loading="lazy" alt="Seekh Kebab" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Seekh Kebab</a></h3><span class="span title-2">₹300</span></div>
+                  <p class="card-text label-1">Minced lamb skewers with fresh herbs and spices, cooked in tandoor, served with roomali roti.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/hara-bhara-kebab.jpg" width="100" height="100" loading="lazy" alt="Hara Bhara Kebab" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Hara Bhara Kebab</a></h3><span class="span title-2">₹200</span></div>
+                  <p class="card-text label-1">Pan-fried spinach and green peas patties with cashews, served with mint yogurt dip.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="non-veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/fish-amritsari.jpg" width="100" height="100" loading="lazy" alt="Fish Amritsari" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator non-veg"></span><h3 class="title-3"><a href="#" class="card-title">Fish Amritsari</a></h3><span class="badge label-1">Bestseller</span><span class="span title-2">₹320</span></div>
+                  <p class="card-text label-1">Battered fish fillets fried golden with ajwain and chaat masala, served with lemon wedges.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-view-more" data-view-more>
+            <span class="text text-1">View More</span>
+            <span class="text text-2" aria-hidden="true">View More</span>
+          </button>
+
+          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-3 move-anim">
+        </div>
+      </section>
+
+
+      <!-- #DESSERTS -->
+      <section class="section menu bg-black-10" aria-label="desserts menu" id="desserts-menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">Meetha</p>
+          <h2 class="headline-1 section-title text-center">Desserts</h2>
+          <ul class="grid-list">
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/gulab-jamun.jpg" width="100" height="100" loading="lazy" alt="Gulab Jamun" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Gulab Jamun</a></h3><span class="badge label-1">Bestseller</span><span class="span title-2">₹150</span></div>
+                  <p class="card-text label-1">Soft milk dumplings soaked in rose-cardamom syrup, served warm with pistachios.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/rasmalai.jpg" width="100" height="100" loading="lazy" alt="Rasmalai" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Rasmalai</a></h3><span class="badge label-1">Popular</span><span class="span title-2">₹180</span></div>
+                  <p class="card-text label-1">Delicate cottage cheese patties in saffron-cardamom milk, garnished with almonds and pistachios.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/gajar-ka-halwa.jpg" width="100" height="100" loading="lazy" alt="Gajar Ka Halwa" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Gajar Ka Halwa</a></h3><span class="span title-2">₹160</span></div>
+                  <p class="card-text label-1">Slow-cooked grated carrots in ghee and milk, topped with cashews, almonds, and khoya.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/jalebi.jpg" width="100" height="100" loading="lazy" alt="Jalebi" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Jalebi with Rabri</a></h3><span class="span title-2">₹140</span></div>
+                  <p class="card-text label-1">Crispy saffron-soaked spirals served hot with thick, creamy rabri and dry fruits.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/kulfi.jpg" width="100" height="100" loading="lazy" alt="Kulfi" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Malai Kulfi</a></h3><span class="span title-2">₹130</span></div>
+                  <p class="card-text label-1">Traditional Indian ice cream with saffron, cardamom, and pistachios, served on a stick.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/kheer.jpg" width="100" height="100" loading="lazy" alt="Kheer" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Badam Kheer</a></h3><span class="span title-2">₹170</span></div>
+                  <p class="card-text label-1">Creamy almond and rice pudding slow-cooked in milk with saffron, rose water, and dry fruits.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-view-more" data-view-more>
+            <span class="text text-1">View More</span>
+            <span class="text text-2" aria-hidden="true">View More</span>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- #DRINKS MENU -->
+      <section class="section menu" aria-label="drinks menu" id="drinks-menu">
+        <div class="container">
+          <p class="section-subtitle text-center label-2">Refreshments</p>
+          <h2 class="headline-1 section-title text-center">Drinks & Beverages</h2>
+          <ul class="grid-list">
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/masala-chai.jpg" width="100" height="100" loading="lazy" alt="Masala Chai" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Masala Chai</a></h3><span class="badge label-1">Popular</span><span class="span title-2">₹80</span></div>
+                  <p class="card-text label-1">Traditional Indian spiced tea with ginger, cardamom, cinnamon, and steamed milk.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/mango-lassi.jpg" width="100" height="100" loading="lazy" alt="Mango Lassi" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Mango Lassi</a></h3><span class="badge label-1">Bestseller</span><span class="span title-2">₹120</span></div>
+                  <p class="card-text label-1">Creamy Alphonso mango blended with yogurt, cardamom, and a hint of saffron.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/thandai.jpg" width="100" height="100" loading="lazy" alt="Thandai" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Thandai</a></h3><span class="span title-2">₹150</span></div>
+                  <p class="card-text label-1">Chilled milk infused with saffron, almonds, fennel seeds, rose petals, and cardamom.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg">
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/jaljeera.jpg" width="100" height="100" loading="lazy" alt="Jaljeera" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Jaljeera Soda</a></h3><span class="span title-2">₹90</span></div>
+                  <p class="card-text label-1">Refreshing cumin-mint cooler with black salt, lemon, and sparkling soda water.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/badam-milk.jpg" width="100" height="100" loading="lazy" alt="Badam Milk" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">Kesar Badam Milk</a></h3><span class="span title-2">₹140</span></div>
+                  <p class="card-text label-1">Warm almond milk with saffron strands, crushed pistachios, and a touch of honey.</p>
+                </div>
+              </div>
+            </li>
+
+            <li data-diet="veg" data-extra>
+              <div class="menu-card hover:card">
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;"><img src="./assets/images/filter-coffee.jpg" width="100" height="100" loading="lazy" alt="Filter Coffee" class="img-cover"></figure>
+                <div>
+                  <div class="title-wrapper"><span class="diet-indicator veg"></span><h3 class="title-3"><a href="#" class="card-title">South Indian Filter Coffee</a></h3><span class="span title-2">₹100</span></div>
+                  <p class="card-text label-1">Strong decoction coffee brewed with chicory, frothed with hot milk in a traditional dabarah set.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-view-more" data-view-more>
+            <span class="text text-1">View More</span>
+            <span class="text text-2" aria-hidden="true">View More</span>
+          </button>
+
+          <p class="menu-text text-center" style="margin-block-start: 30px;">
+            Served daily from <span class="span">8:00 am</span> to <span class="span">10:00 pm</span>
+          </p>
+
+        </div>
+      </section>
+
+
+    </article>
+  </main>
+
+
+
+  <!-- #FOOTER -->
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="160" height="50" loading="lazy" alt="crave home">
+          </a>
+          <address class="body-4">
+            Restaurant St, Delicious City, London 9578, UK
+          </address>
+          <a href="mailto:booking@crave.com" class="body-4 contact-link">booking@crave.com</a>
+          <a href="tel:+88123123456" class="body-4 contact-link">Booking Request : +88-123-123456</a>
+          <p class="body-4">Open : 09:00 am - 01:00 pm</p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Get News & Offers</p>
+          <p class="label-1">
+            Subscribe us & Get <span class="span">25% Off.</span>
+          </p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+            </div>
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1">Subscribe</span>
+              <span class="text text-2" aria-hidden="true">Subscribe</span>
+            </button>
+          </form>
+        </div>
+
+        <ul class="footer-list">
+          <li><a href="./index.html" class="label-2 footer-link hover-underline">Home</a></li>
+          <li><a href="./menu.html" class="label-2 footer-link hover-underline">Menus</a></li>
+          <li><a href="./about.html" class="label-2 footer-link hover-underline">About Us</a></li>
+          <li><a href="./chefs.html" class="label-2 footer-link hover-underline">Our Chefs</a></li>
+          <li><a href="./blog.html" class="label-2 footer-link hover-underline">Blog</a></li>
+          <li><a href="./contact.html" class="label-2 footer-link hover-underline">Contact</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><a href="#" class="label-2 footer-link hover-underline">Facebook</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Instagram</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Twitter</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Youtube</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Google Map</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 Crave. All Rights Reserved | Developed by Buzz Entertainment
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- #BACK TO TOP -->
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <script src="./assets/js/page.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

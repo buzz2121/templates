@@ -1,0 +1,10 @@
+{
+  "name": "EstateFlow",
+  "description": "A luxury black & gold real estate concierge platform featuring bespoke property portfolios, EMI calc, virtual tours, and strategic portfolio audit.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

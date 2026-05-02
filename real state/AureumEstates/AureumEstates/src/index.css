@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  
+  /* DAMAC Official Gold Palette */
+  --color-gold: #B0914F;
+  --color-gold-light: #D4BC7C;
+  --color-gold-dark: #8E6E1F;
+  
+  /* DAMAC Charcoal / Black */
+  --color-deep-blue: #0A1628;
+  --color-charcoal: #1A1C1E;
+  --color-black-luxury: #000000;
+  
+  /* Light Palette */
+  --color-luxury-white: #FFFFFF;
+  --color-cream: #FFFFFF;
+  --color-pearl: #F9F9F9;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-charcoal selection:bg-gold/10 selection:text-charcoal;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-charcoal;
+  }
+
+  h1 {
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .cinematic-bg {
+    @apply fixed inset-0 pointer-events-none;
+    background: 
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(212, 188, 124, 0.15) 0%, transparent 60%), 
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(180, 148, 62, 0.08) 0%, transparent 50%), 
+      linear-gradient(175deg, #FDFBF7, #F5F2ED 50%, #ECE9E4);
+    z-index: -1;
+  }
+
+  .glass {
+    @apply backdrop-blur-2xl border border-charcoal/5;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .glass-gold {
+    @apply backdrop-blur-2xl border border-gold/20;
+    background: rgba(253, 251, 247, 0.8);
+  }
+
+  .glass-blue {
+    @apply backdrop-blur-2xl border border-charcoal/5;
+    background: rgba(245, 242, 237, 0.6);
+  }
+  
+  .gold-text {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-transparent bg-clip-text font-bold;
+  }
+
+  .gold-shimmer {
+    @apply bg-gradient-to-r from-gold-dark via-gold-light to-gold-dark text-transparent bg-clip-text;
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .premium-pill {
+    @apply px-8 py-3 border border-gold/30 rounded-full text-[10px] uppercase tracking-[0.25em] font-bold text-gold-dark hover:bg-gold/5 hover:scale-105 transition-all active:scale-95 duration-300;
+  }
+
+  /* Section spacing for premium white space */
+  .section-luxury {
+    @apply py-36 md:py-44;
+  }
+
+  .section-heading {
+    @apply mb-20 md:mb-28 space-y-8;
+  }
+
+  /* Luxury divider */
+  .luxury-divider {
+    @apply w-16 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto;
+  }
+
+  /* Image hover treatment */
+  .luxury-image {
+    @apply object-cover transition-all duration-1000 ease-out;
+    filter: saturate(1.1) brightness(1.1);
+  }
+
+  .luxury-image-hover:hover .luxury-image,
+  .group:hover .luxury-image {
+    filter: saturate(1.2) brightness(1.15);
+    transform: scale(1.08);
+  }
+
+  /* Floating glow effect - Subtler for light theme */
+  .glow-gold {
+    box-shadow: 0 20px 80px -20px rgba(180, 148, 62, 0.12);
+  }
+
+  .glow-blue {
+    box-shadow: 0 20px 100px -30px rgba(10, 22, 40, 0.08);
+  }
+  /* Infinite Scroll Animation */
+  .infinite-scroll-track {
+    display: flex;
+    gap: 5rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+  }
+
+  .infinite-scroll-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-pearl;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal/10 rounded-full hover:bg-gold/50 transition-colors;
+}

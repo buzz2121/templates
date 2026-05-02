@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations | Aurel Fine Dining</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind for layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1a1a1a',
+            cream: '#f8f5f0',
+            gold: '#c19d68',
+            'gold-dark': '#a07d4a',
+            'gold-light': '#d4b896',
+            'charcoal-light': '#2e2e2e',
+            'charcoal-mid': '#3d3d3d',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-charcoal">
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="fixed inset-0 z-[1000] bg-charcoal flex items-center justify-center">
+    <div class="relative w-48 h-px bg-white/10 overflow-hidden">
+      <div class="loader-bar absolute inset-y-0 left-0 bg-gold w-full origin-left scale-x-0"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ HEADER / NAV ═══════════════════════ -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 mix-blend-normal">
+    <nav class="nav-container flex items-center justify-between px-8 py-6 lg:px-16 transition-all duration-500">
+      <!-- Logo -->
+      <a href="index.html" class="font-serif text-2xl text-cream tracking-[0.2em] hover:text-gold transition-colors duration-300">AUREL</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden lg:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Home</a></li>
+        <li><a href="menu.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Menu</a></li>
+        <li><a href="about.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Our Story</a></li>
+        <li><a href="booking.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300 active-link">Reserve</a></li>
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-6">
+        <button id="cart-toggle" class="relative p-2 text-cream hover:text-gold transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count hidden">0</span>
+        </button>
+        <a href="booking.html" class="hidden lg:inline-block btn-gold">Book a Table</a>
+        <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-4 h-px bg-gold transition-all duration-300"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div id="mobile-nav" class="fixed inset-0 z-40 bg-charcoal flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+    <nav class="flex flex-col items-center gap-10">
+      <a href="index.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Home</a>
+      <a href="menu.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Menu</a>
+      <a href="about.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Our Story</a>
+      <a href="booking.html" class="font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Reserve</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/booking-bg.jpg" alt="Booking Background" class="w-full h-full object-cover opacity-30 parallax-img" />
+        <div class="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/80 to-charcoal"></div>
+      </div>
+      <div class="relative z-10 text-center px-8 reveal-item">
+        <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Reservations</span>
+        <h1 class="font-serif text-cream text-5xl lg:text-7xl mt-6 leading-tight">Reserve Your <em>Evening</em></h1>
+        <p class="font-sans text-cream/60 text-sm mt-6 tracking-widest uppercase">Select your preferred date & time below</p>
+      </div>
+    </section>
+
+    <!-- CENTERED FORM SECTION -->
+    <section class="py-20 bg-cream text-charcoal">
+      <div class="max-w-4xl mx-auto px-8 lg:px-20">
+        
+        <div class="grid lg:grid-cols-3 gap-16">
+          
+          <!-- LEFT: INFO -->
+          <div class="lg:col-span-1 space-y-12 reveal-item">
+            <div>
+              <h3 class="font-serif text-charcoal text-2xl mb-6">Dining Hours</h3>
+              <div class="space-y-2 opacity-70 text-sm">
+                <p class="flex justify-between font-sans"><span>Tue – Thu</span> <span>18:00 – 22:00</span></p>
+                <p class="flex justify-between font-sans"><span>Fri – Sat</span> <span>17:30 – 23:00</span></p>
+                <p class="flex justify-between font-sans"><span>Sunday</span> <span>17:00 – 21:00</span></p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-charcoal text-2xl mb-6">Contact</h3>
+              <div class="space-y-4 opacity-70 text-sm">
+                <p class="font-sans">54 Madison Avenue, New York, NY 10022</p>
+                <p class="font-sans">+1 (212) 555-0191</p>
+                <p class="font-sans">reservations@aurel.com</p>
+              </div>
+            </div>
+
+            <div class="pt-8 border-t border-charcoal/10">
+              <p class="font-sans text-gold text-xs tracking-[0.2em] uppercase mb-4">Dress Code</p>
+              <p class="text-charcoal/60 text-xs italic leading-relaxed">Smart casual to formal. We politely ask guests to refrain from sportswear and flip-flops.</p>
+            </div>
+          </div>
+
+          <!-- RIGHT: FORM -->
+          <div class="lg:col-span-2">
+            <div class="reveal-item mb-10">
+              <h2 class="font-serif text-charcoal text-4xl mb-4">Make a Reservation</h2>
+              <p class="font-sans text-charcoal/50 text-sm italic">Please book at least 72 hours in advance.</p>
+            </div>
+
+            <form id="booking-form" class="space-y-10 reveal-item" novalidate>
+              
+              <!-- Name Row -->
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="float-label-group">
+                  <input type="text" id="first-name" class="float-input" placeholder=" " required />
+                  <label for="first-name" class="float-label">First Name</label>
+                </div>
+                <div class="float-label-group">
+                  <input type="text" id="last-name" class="float-input" placeholder=" " required />
+                  <label for="last-name" class="float-label">Last Name</label>
+                </div>
+              </div>
+
+              <!-- Contact Row -->
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="float-label-group">
+                  <input type="email" id="email" class="float-input" placeholder=" " required />
+                  <label for="email" class="float-label">Email Address</label>
+                </div>
+                <div class="float-label-group">
+                  <input type="tel" id="phone" class="float-input" placeholder=" " required />
+                  <label for="phone" class="float-label">Phone Number</label>
+                </div>
+              </div>
+
+              <!-- Date & Time Row -->
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="float-label-group">
+                  <input type="date" id="date" class="float-input float-input-date" placeholder=" " required />
+                  <label for="date" class="float-label float-label-date">Date</label>
+                </div>
+                <div class="float-label-group">
+                  <select id="time" class="float-select" required>
+                    <option value="" disabled selected>Select Time</option>
+                    <option value="17:30">5:30 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="18:30">6:30 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="19:30">7:30 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                    <option value="20:30">8:30 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Guests & Occasion Row -->
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="float-label-group">
+                  <select id="guests" class="float-select" required>
+                    <option value="" disabled selected>Number of Guests</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+                    <option value="7">7 People</option>
+                    <option value="8+">Large Group (8+)</option>
+                  </select>
+                </div>
+                <div class="float-label-group">
+                  <select id="occasion" class="float-select">
+                    <option value="" disabled selected>Special Occasion (Optional)</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="proposal">Proposal</option>
+                    <option value="business">Business Dinner</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <!-- Notes -->
+              <div class="float-label-group">
+                <textarea id="notes" class="float-textarea" placeholder=" " rows="2"></textarea>
+                <label for="notes" class="float-label">Dietary Requirements or Special Requests</label>
+              </div>
+
+              <div class="pt-6">
+                <button type="submit" class="btn-gold w-full py-4 text-sm font-bold tracking-[0.4em]">Confirm Reservation</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-24 bg-charcoal text-cream border-t border-white/5">
+    <div class="max-w-screen-2xl mx-auto px-8 lg:px-20 grid grid-cols-1 md:grid-cols-4 gap-16">
+      <div class="col-span-1 md:col-span-2">
+        <h3 class="font-serif text-3xl mb-8">AUREL</h3>
+        <p class="max-w-sm text-cream/40 text-sm leading-relaxed mb-12">Artisan cuisine meets architectural design. Join us for a culinary journey where every detail is deliberate.</p>
+        <div class="flex gap-8">
+          <a href="#" class="text-xs uppercase tracking-widest text-gold hover:text-cream transition-colors">Instagram</a>
+          <a href="#" class="text-xs uppercase tracking-widest text-gold hover:text-cream transition-colors">Twitter</a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-sans text-xs uppercase tracking-[0.3em] text-gold mb-8">Visit Us</h4>
+        <p class="text-sm opacity-60 leading-relaxed">54 Madison Avenue<br>New York, NY 10022</p>
+        <p class="text-sm opacity-60 mt-4">+1 (212) 555-0191</p>
+      </div>
+
+      <div>
+        <h4 class="font-sans text-xs uppercase tracking-[0.3em] text-gold mb-8">Hours</h4>
+        <p class="text-sm opacity-60">Tue – Thu: 18:00 – 22:00</p>
+        <p class="text-sm opacity-60">Fri – Sat: 17:30 – 23:00</p>
+        <p class="text-sm opacity-60">Sun: 17:00 – 21:00</p>
+      </div>
+    </div>
+    
+    <div class="max-w-screen-2xl mx-auto px-8 lg:px-20 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[0.6rem] font-bold tracking-[0.3em] uppercase">
+      <p>&copy; 2025 Aurel. Fine Dining Excellence.</p>
+      <div class="flex gap-12">
+        <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 z-[100] w-full max-w-sm bg-charcoal border-l border-white/10 hidden">
+    <div class="cart-header p-8 border-b border-white/10 flex items-center justify-between bg-charcoal text-cream">
+      <h3 class="font-serif text-2xl">Your Order</h3>
+      <button id="cart-close" class="p-2 opacity-50 hover:opacity-100 transition-opacity">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items-container p-8 overflow-y-auto h-[calc(100vh-250px)]">
+      <!-- Items dynamically injected -->
+    </div>
+    <div class="cart-footer p-8 border-t border-white/10 bg-charcoal-light">
+      <div class="flex items-center justify-between mb-6">
+        <span class="text-sm opacity-50 uppercase tracking-widest">Subtotal</span>
+        <span id="cart-total" class="font-serif text-xl">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn-gold w-full py-4 tracking-[0.3em] italic">Checkout</button>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="checkout-modal animate-fade-up max-h-[90vh] overflow-y-auto">
+      <button class="modal-close absolute top-6 right-6 p-2 text-charcoal/30 hover:text-charcoal transition-colors">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="checkout-form-container">
+        <h2 class="font-serif text-charcoal text-4xl mb-2">Order Details</h2>
+        <p class="font-sans text-charcoal/50 text-sm mb-10">Please provide your pick-up details.</p>
+
+        <form id="order-form" class="space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="float-label-group">
+              <input type="text" id="cust-first" class="float-input" placeholder=" " required />
+              <label for="cust-first" class="float-label">First Name</label>
+            </div>
+            <div class="float-label-group">
+              <input type="text" id="cust-last" class="float-input" placeholder=" " required />
+              <label for="cust-last" class="float-label">Last Name</label>
+            </div>
+          </div>
+          <div class="float-label-group">
+            <input type="email" id="cust-email" class="float-input" placeholder=" " required />
+            <label for="cust-email" class="float-label">Email Address</label>
+          </div>
+          <div class="float-label-group">
+            <input type="tel" id="cust-phone" class="float-input" placeholder=" " required />
+            <label for="cust-phone" class="float-label">Phone Number</label>
+          </div>
+          <div class="pt-4">
+            <button type="submit" class="btn-charcoal w-full py-4 tracking-[0.3em]">Place Order</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="order-success" class="hidden text-center py-12">
+        <div class="text-gold text-5xl mb-4">✓</div>
+        <h3 class="font-serif text-charcoal text-3xl mb-4">Order Received</h3>
+        <p class="font-sans text-charcoal/60">Your dinner is being prepared. We'll alert you when it's on its way.</p>
+        <button id="success-close" class="btn-charcoal mt-8">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+
+</body>
+</html>

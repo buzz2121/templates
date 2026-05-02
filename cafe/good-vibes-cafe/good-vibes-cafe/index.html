@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Good Vibes Cafe & Restro — Where Taste Meets Tranquility</title>
+<meta name="description" content="Good Vibes Cafe & Restro — a premium European-inspired cafe and restaurant. Crafted coffee, curated dining, warm ambience. Reserve your table today." />
+<meta name="theme-color" content="#2B1D17" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-mark">GOOD VIBES</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">GOOD VIBES <i>Cafe</i></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#why">Experience</a></li>
+        <li><a href="#gallery">Ambience</a></li>
+        <li><a href="#location">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="#reserve" class="nav-cta">Reserve</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <span class="bean b1" style="--r:25deg"></span>
+  <span class="bean b2" style="--r:-15deg"></span>
+  <span class="bean b3" style="--r:45deg"></span>
+  <div class="container hero-content">
+    <span class="eyebrow reveal">Est. 2014 · Artisan Cafe & Restro</span>
+    <h1 class="reveal delay-1">Crafted Coffee. <em>Curated</em><br>Experiences.</h1>
+    <p class="hero-sub reveal delay-2">A slow-brewed sanctuary where single-origin beans meet seasonal plates, candlelit corners, and the quiet luxury of a perfectly poured cup.</p>
+    <div class="hero-ctas reveal delay-3">
+      <a href="#menu" class="btn btn-primary">View Menu <span class="arrow">→</span></a>
+      <a href="#reserve" class="btn btn-ghost">Reserve a Table</a>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec sec-cream" id="about">
+  <div class="container about-grid">
+    <div class="about-imgs reveal">
+      <img class="a1" src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=900&q=80" alt="Good Vibes cafe interior with warm ambient lighting"/>
+      <img class="a2" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Barista crafting a signature pour over coffee"/>
+    </div>
+    <div class="about-text reveal delay-1">
+      <span class="eyebrow">Our Story</span>
+      <h2>A Quiet Ritual,<br>Brewed With Intent.</h2>
+      <p>Good Vibes began as a love letter to the slow morning — to the hush of espresso pulled to perfection, to ceramic warm in your palms, to conversations that linger past their last sip.</p>
+      <p>Every bean is sourced from highland farms, every plate composed by chefs who believe simplicity is the highest form of craft. This is not a cafe you pass through. It is one you return to.</p>
+      <div class="stats">
+        <div class="stat"><div class="num"><span data-count="11">0</span>+</div><div class="lbl">Years Crafting</div></div>
+        <div class="stat"><div class="num"><span data-count="48">0</span>k</div><div class="lbl">Guests Served</div></div>
+        <div class="stat"><div class="num"><span data-count="37">0</span></div><div class="lbl">Signature Plates</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec sec-warm" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Signature Menu</span>
+      <h2>Curated With Care</h2>
+      <p>Seasonal ingredients, single-origin beans, and dishes designed to be savoured slowly.</p>
+    </div>
+    <div class="menu-tabs reveal delay-1">
+      <button class="tab active" data-cat="all">All</button>
+      <button class="tab" data-cat="coffee">Coffee</button>
+      <button class="tab" data-cat="bev">Beverages</button>
+      <button class="tab" data-cat="dessert">Desserts</button>
+      <button class="tab" data-cat="main">Main Course</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+    <div class="reveal delay-2" style="text-align: center; margin-top: 60px;">
+      <a href="menu.html" class="btn btn-primary">View Full Menu <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec sec-dark" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Good Vibes</span>
+      <h2>The Good Vibes Difference</h2>
+      <p style="color:rgba(245,237,230,.65)">Five quiet promises behind every cup we pour and every plate we serve.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feat reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c2 4 6 4 6 9a6 6 0 11-12 0c0-5 4-5 6-9z"/></svg></div>
+        <h3>Organic Beans</h3><p>Highland-grown, traceable to the farm, roasted in small daily batches.</p>
+      </div>
+      <div class="feat reveal delay-1">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2v6a6 6 0 1012 0V2M9 2v4M15 2v4M12 14v8"/></svg></div>
+        <h3>Artisan Chefs</h3><p>European-trained, locally inspired, devoted to seasonal craft.</p>
+      </div>
+      <div class="feat reveal delay-2">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V10l9-7 9 7v11M9 21v-7h6v7"/></svg></div>
+        <h3>Cozy Ambience</h3><p>Warm timbers, candlelight, and the soft hum of a room well-lived.</p>
+      </div>
+      <div class="feat reveal delay-3">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a10 10 0 0114 0M8.5 15.5a5 5 0 017 0M12 19h.01"/></svg></div>
+        <h3>Work Friendly</h3><p>Fast Wi-Fi, quiet nooks, and bottomless refills for the long thinkers.</p>
+      </div>
+      <div class="feat reveal delay-3">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.6z"/></svg></div>
+        <h3>Made with Love</h3><p>Every detail, from cup to candle, considered. Always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec sec-cream" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ambience Gallery</span>
+      <h2>Moments at Good Vibes</h2>
+      <p>A glimpse into the corners, plates, and quiet hours that make this place ours.</p>
+    </div>
+    <div class="masonry reveal delay-1" id="masonry">
+      <figure><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Latte art on rustic wooden table"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" alt="Cozy restaurant dining setup"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=700&q=80" alt="Espresso pouring into ceramic cup"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&w=700&q=80" alt="Plated artisan dessert"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=700&q=80" alt="Warm cafe corner with hanging lights"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?auto=format&fit=crop&w=700&q=80" alt="Cappuccino with delicate foam art"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80" alt="Brunch spread with pastries"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?auto=format&fit=crop&w=700&q=80" alt="Candlelit evening dining"/></figure>
+      <figure><img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=700&q=80" alt="Fresh croissants on marble"/></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="feature-strip">
+  <div class="feature-bg" id="featBg"></div>
+  <div class="container reveal">
+    <span class="eyebrow" style="color:var(--gold)">A Good Vibes Evening</span>
+    <h2 style="margin-top:18px">More Than a Meal — <span>It's a Moment.</span></h2>
+    <p>Soft jazz, candle glow, and a chef's table built for stories worth telling twice.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec sec-warm">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Guest Voices</span>
+      <h2>Loved by Locals</h2>
+    </div>
+    <div class="tcarousel reveal delay-1">
+      <div class="ttrack" id="ttrack">
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Good Vibes effortlessly bridges the gap between an artisan coffee house and a fine dining sanctuary. Their Saffron Latte is an absolute revelation, and the ambiance is unmatched in the city."</blockquote>
+          <div class="who"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Julian H."/><div><div class="name">Julian H.</div><div class="role">Lifestyle Architect</div></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"As someone who travels for culinary experiences, the Herb-Crusted Salmon here competes with Michelin-starred establishments in Europe. It's an impeccable blend of flavor, craft, and soul."</blockquote>
+          <div class="who"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Elena R."/><div><div class="name">Elena R.</div><div class="role">Culinary Connoisseur</div></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"There is a rare, quiet luxury to Good Vibes. The attention to detail—from the weight of the ceramic cups to the ambient lighting—makes every visit feel like an exclusive retreat."</blockquote>
+          <div class="who"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Marcus L."/><div><div class="name">Marcus L.</div><div class="role">Creative Director</div></div></div>
+        </div>
+      </div>
+      <div class="tdots" id="tdots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="sec reserve" id="reserve">
+  <div class="reserve-bg"></div>
+  <div class="container reserve-grid">
+    <div class="reserve-info reveal">
+      <span class="eyebrow">Reservations</span>
+      <h2>Save Your Seat at the Table.</h2>
+      <p>Whether it's a slow Sunday brunch or a candlelit dinner, we'll hold the perfect spot for you.</p>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Open daily, 7am — 11pm</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>14 Linden Lane, Old Quarter</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L7.9 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg>+1 (415) 555-0142</li>
+      </ul>
+    </div>
+    <form class="form reveal delay-1" id="reserveForm" onsubmit="return submitReserve(event)">
+      <h3>Book Your Table</h3>
+      <div class="field"><input type="text" placeholder="Full Name" required name="name"/></div>
+      <div class="field"><input type="tel" placeholder="Phone Number" required name="phone"/></div>
+      <div class="row">
+        <div class="field"><input type="date" required name="date"/></div>
+        <div class="field"><input type="time" required name="time"/></div>
+      </div>
+      <div class="field">
+        <select required name="guests">
+          <option value="">Number of Guests</option>
+          <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+          <option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Book Your Table <span class="arrow">→</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec sec-cream" id="location">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2>Visit Good Vibes</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="map-wrap reveal">
+        <iframe loading="lazy" title="Good Vibes location map" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.4194%2C37.7649%2C-122.4094%2C37.7749&layer=mapnik&marker=37.7699%2C-122.4144"></iframe>
+      </div>
+      <div class="loc-card reveal delay-1">
+        <span class="eyebrow">Hours & Address</span>
+        <h2>Come As You Are.</h2>
+        <div class="loc-block">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Address</h4><p>14 Linden Lane, Old Quarter<br>San Francisco, CA 94110</p></div>
+        </div>
+        <div class="loc-block">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div style="flex:1">
+            <h4>Opening Hours</h4>
+            <div class="hours">
+              <div><span>Mon — Thu</span><span>7:00 AM — 10:00 PM</span></div>
+              <div><span>Fri — Sat</span><span>7:00 AM — 11:30 PM</span></div>
+              <div><span>Sunday</span><span>8:00 AM — 9:00 PM</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="loc-block">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L7.9 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg></div>
+          <div><h4>Contact</h4><p>+1 (415) 555-0142<br>hello@goodvibes.cafe</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot">
+        <div class="brand-foot">GOOD VIBES <i style="color:var(--gold);font-weight:500">Cafe</i></div>
+        <p>Where taste meets tranquility. A slow ritual brewed in the heart of the Old Quarter.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 7v10M9 14l3 3 3-3"/></svg></a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Ambience</a></li>
+          <li><a href="#reserve">Reservations</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Visit</h4>
+        <ul>
+          <li>14 Linden Lane</li>
+          <li>San Francisco, CA</li>
+          <li>+1 (415) 555-0142</li>
+          <li>hello@goodvibes.cafe</li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Newsletter</h4>
+        <p>Slow stories, seasonal menus, and quiet invitations — once a month.</p>
+        <form class="news-form" onsubmit="event.preventDefault();this.querySelector('input').value='';alert('Thank you for subscribing.')">
+          <input type="email" placeholder="Your email" required/>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Good Vibes Cafe & Restro. All rights reserved.</div>
+      <div><em>Where taste meets tranquility.</em></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="close" aria-label="Close">×</button><img id="lbImg" alt=""/></div>
+
+<script>
+/* ===== Loader ===== */
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hidden'),400)});
+
+/* ===== Nav scroll ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>60)});
+
+/* ===== Burger ===== */
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('mobile')});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('mobile')}));
+
+/* ===== Hero parallax + beans ===== */
+const heroBg=document.getElementById('heroBg'),featBg=document.getElementById('featBg');
+addEventListener('scroll',()=>{
+  const y=scrollY;
+  if(heroBg) heroBg.style.transform=`translate3d(0,${y*.35}px,0) scale(1.05)`;
+  if(featBg){const r=featBg.getBoundingClientRect();featBg.style.transform=`translate3d(0,${(r.top)*-0.15}px,0)`}
+},{passive:true});
+
+/* ===== Reveal ===== */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Counters ===== */
+const cio=new IntersectionObserver((es)=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const el=e.target,target=+el.dataset.count;let cur=0;const step=Math.max(1,target/60);
+    const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t)}el.textContent=Math.floor(cur)},22);
+    cio.unobserve(el);
+  }
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ===== Menu ===== */
+const dishes=[
+  {cat:'coffee',name:'Good Vibes Signature Pour',desc:'Single-origin Ethiopian, slow-bloomed for floral clarity.',price:'$6',img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Espresso Maravilla',desc:'Double shot, dark cocoa finish, served with sparkling water.',price:'$5',img:'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Saffron Latte',desc:'Steamed milk, raw honey, and a thread of Persian saffron.',price:'$7',img:'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80'},
+  {cat:'bev',name:'Rose Cardamom Cooler',desc:'Cold-pressed rose, green cardamom, sparkling tonic.',price:'$8',img:'https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=700&q=80'},
+  {cat:'bev',name:'Matcha Velvet',desc:'Ceremonial-grade matcha whisked with oat cream.',price:'$7',img:'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=700&q=80'},
+  {cat:'dessert',name:'Tiramisu Classico',desc:'Mascarpone, espresso-soaked savoiardi, dusted cocoa.',price:'$9',img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=80'},
+  {cat:'dessert',name:'Honey Fig Tart',desc:'Almond crust, mascarpone, fresh figs, wildflower honey.',price:'$10',img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Truffle Mushroom Pasta',desc:'Hand-cut tagliatelle, wild mushrooms, shaved truffle.',price:'$22',img:'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Herb-Crusted Salmon',desc:'Atlantic salmon, lemon thyme, charred asparagus, beurre blanc.',price:'$26',img:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=80'},
+];
+const grid=document.getElementById('menuGrid');
+function renderMenu(cat='all'){
+  grid.innerHTML='';
+  dishes.filter(d=>cat==='all'||d.cat===cat).forEach((d,i)=>{
+    const el=document.createElement('article');
+    el.className='dish reveal';if(i%3===1)el.classList.add('delay-1');if(i%3===2)el.classList.add('delay-2');
+    el.innerHTML=`<div class="dish-img"><img src="${d.img}" alt="${d.name}" loading="lazy"/></div>
+      <div class="dish-body"><div class="dish-head"><h3>${d.name}</h3><div class="dish-price">${d.price}</div></div>
+      <p class="dish-desc">${d.desc}</p></div>`;
+    grid.appendChild(el);io.observe(el);
+  });
+}
+renderMenu();
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');renderMenu(t.dataset.cat);
+}));
+
+/* ===== Lightbox ===== */
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+document.querySelectorAll('#masonry img').forEach(img=>img.addEventListener('click',e=>{
+  e.stopPropagation();lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');
+}));
+function closeLightbox(){lb.classList.remove('open')}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+
+/* ===== Testimonials ===== */
+const track=document.getElementById('ttrack'),dots=document.getElementById('tdots');
+const cards=track.children.length;let idx=0;
+for(let i=0;i<cards;i++){const d=document.createElement('span');d.className='tdot'+(i===0?' active':'');d.onclick=()=>go(i);dots.appendChild(d)}
+function go(i){idx=i;Array.from(track.children).forEach(c=>c.style.transform=`translateX(-${i*100}%)`);dots.querySelectorAll('.tdot').forEach((d,n)=>d.classList.toggle('active',n===i))}
+setInterval(()=>go((idx+1)%cards),5500);
+
+/* ===== Reserve ===== */
+function submitReserve(e){e.preventDefault();const f=e.target;const name=f.name.value;
+  f.querySelector('button').textContent='✓ Reserved — See You Soon';
+  f.querySelector('button').style.background='var(--terra)';
+  setTimeout(()=>{f.reset();const b=f.querySelector('button');b.innerHTML='Book Your Table <span class="arrow">→</span>';b.style.background=''},3500);
+  return false;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* ============================================
+   AURELIAN LUXURY HOTELS — Shared Animations
+   ============================================ */
+
+/* ── Fonts & Base ── */
+body { font-family: 'Inter', sans-serif; color: #222222; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; }
+html { scroll-behavior: smooth; }
+
+/* ── Keyframes ── */
+@keyframes fadeUp    { from{opacity:0;transform:translateY(44px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeDown  { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeLeft  { from{opacity:0;transform:translateX(-44px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeRight { from{opacity:0;transform:translateX(44px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn   { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
+@keyframes rotateIn  { from{opacity:0;transform:rotate(-6deg) scale(0.9)} to{opacity:1;transform:rotate(0) scale(1)} }
+@keyframes bob       { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+@keyframes pulse-gold{ 0%,100%{box-shadow:0 0 0 0 rgba(214,177,60,.45)} 60%{box-shadow:0 0 0 14px rgba(214,177,60,0)} }
+@keyframes shimmer   { 0%{background-position:-200% center} 100%{background-position:200% center} }
+@keyframes barGrow   { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+@keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes count-up  { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+@keyframes ripple    { to{transform:scale(2.5);opacity:0} }
+@keyframes typeIn    { from{width:0} to{width:100%} }
+
+/* ── Hero Entrance ── */
+.hero-badge  { animation:fadeUp  .7s cubic-bezier(.16,1,.3,1) .25s both }
+.hero-title  { animation:fadeUp  .9s cubic-bezier(.16,1,.3,1) .5s  both }
+.hero-sub    { animation:fadeUp  .9s cubic-bezier(.16,1,.3,1) .72s both }
+.hero-btns   { animation:fadeUp  .9s cubic-bezier(.16,1,.3,1) .92s both }
+.hero-stat   { animation:scaleIn .8s cubic-bezier(.16,1,.3,1) 1.1s both }
+
+/* ── Scroll Reveal ── */
+.reveal          { opacity:0; transform:translateY(38px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.reveal.from-left  { transform:translateX(-38px); }
+.reveal.from-right { transform:translateX(38px); }
+.reveal.scale    { transform:scale(0.9); }
+.reveal.visible  { opacity:1!important; transform:none!important; }
+.reveal-d1 { transition-delay:.1s }
+.reveal-d2 { transition-delay:.2s }
+.reveal-d3 { transition-delay:.3s }
+.reveal-d4 { transition-delay:.4s }
+.reveal-d5 { transition-delay:.5s }
+
+/* ── Card Lift ── */
+.card-lift { transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1); }
+.card-lift:hover { transform:translateY(-10px); box-shadow:0 36px 72px -18px rgba(0,0,0,.2); }
+
+/* ── Image Zoom ── */
+.img-zoom          { overflow:hidden; }
+.img-zoom img,
+.img-zoom .zoom-target { transition:transform .75s cubic-bezier(.16,1,.3,1); }
+.img-zoom:hover img,
+.img-zoom:hover .zoom-target { transform:scale(1.1); }
+
+/* ── Gold Shimmer Button ── */
+.btn-gold {
+  background:linear-gradient(90deg,#b8952e 0%,#d6b13c 30%,#f5e07a 50%,#d6b13c 70%,#b8952e 100%);
+  background-size:250% auto;
+  transition:background-position .6s ease, transform .3s ease, box-shadow .3s ease;
+  color:#fff;
+}
+.btn-gold:hover { background-position:right center; transform:translateY(-3px); box-shadow:0 14px 32px -8px rgba(214,177,60,.5); }
+
+/* ── Pulse Glow ── */
+.pulse-gold { animation:pulse-gold 2.6s ease-in-out infinite; }
+
+/* ── Floating element ── */
+.float-anim { animation:float 3.5s ease-in-out infinite; }
+
+/* ── Scroll bob indicator ── */
+.scroll-bob { animation:bob 2.2s ease-in-out infinite; }
+
+/* ── Gold Accent Bar ── */
+.gold-bar { display:block; height:2px; background:#d6b13c; transform-origin:left; transform:scaleX(0); }
+.gold-bar.visible { animation:barGrow .8s cubic-bezier(.16,1,.3,1) forwards; }
+.gold-bar-center { display:block; height:2px; width:56px; background:linear-gradient(90deg,transparent,#d6b13c,transparent); margin:0 auto 1.4rem; }
+
+/* ── Divider ── */
+.divider-shine { height:1px; background:linear-gradient(90deg,transparent,rgba(214,177,60,.4),transparent); }
+
+/* ── Rotating ring ── */
+.ring-spin { animation:spin-slow 18s linear infinite; }
+
+/* ── Nav scroll state ── */
+#navbar { transition:all .35s cubic-bezier(.16,1,.3,1); }
+#navbar.scrolled {
+    background:rgba(255,255,255,.97) !important;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    box-shadow:0 4px 24px rgba(0,0,0,.09);
+    border-bottom:1px solid rgba(0,0,0,.06);
+    padding-top:.6rem !important;
+    padding-bottom:.6rem !important;
+}
+
+/* Brand text switches to dark on scroll */
+#navbar.scrolled .brand-name  { color:#222222 !important; }
+#navbar.scrolled .brand-sub   { color:rgba(34,34,34,.5) !important; }
+
+/* Nav links switch to dark on scroll */
+#navbar.scrolled .nav-link    { color:rgba(34,34,34,.65) !important; }
+#navbar.scrolled .nav-link:hover { color:#222222 !important; }
+
+/* Active gold pill stays gold — but NO background for the logo/brand link */
+#navbar.scrolled .nav-active:not(.group) { color:#d6b13c !important; background:rgba(214,177,60,.1) !important; }
+#navbar.scrolled a.group.nav-active { background: transparent !important; }
+
+/* Hamburger icon goes dark on scroll */
+#navbar.scrolled #mobile-menu-btn { background:rgba(0,0,0,.06) !important; color:#222222 !important; }
+
+/* Logo circle — removed scroll overrides to keep it consistent */
+
+/* ── Underline hover for nav links ── */
+.nav-link { position:relative; }
+.nav-link::after { content:''; position:absolute; bottom:-2px; left:50%; right:50%; height:1.5px; background:#d6b13c; transition:left .3s ease, right .3s ease; }
+.nav-link:hover::after { left:0; right:0; }
+
+/* ── Sub-pages: nav starts transparent over dark hero ── */
+.nav-transparent .nav-link { color:rgba(255,255,255,.8); }
+.nav-transparent .nav-link:hover { color:#fff; }
+
+/* ── Scrolled: ALL anchors inside navbar go dark ── */
+#navbar.scrolled a:not(.btn-book):not(.nav-active) { color:rgba(34,34,34,.65) !important; }
+#navbar.scrolled a:not(.btn-book):not(.nav-active):hover { color:#222 !important; }
+#navbar.scrolled .brand-name,
+#navbar.scrolled span.font-heading { color:#222222 !important; }
+#navbar.scrolled .brand-sub,
+#navbar.scrolled div.tracking-widest { color:rgba(34,34,34,.5) !important; }
+#navbar.scrolled .nav-active { color:#d6b13c !important; background:rgba(214,177,60,.1) !important; }
+#navbar.scrolled .btn-book,
+#navbar.scrolled a.bg-gold { color:#fff !important; }
+
+/* ── Tag badge ── */
+.tag { display:inline-block; font-size:.65rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; padding:.3rem .9rem; border-radius:999px; }
+.tag-gold { background:rgba(214,177,60,.12); color:#b8952e; }
+.tag-white { background:rgba(255,255,255,.18); color:#fff; backdrop-filter:blur(6px); }
+
+/* ── Testimonial card ── */
+.testi-card { position:relative; }
+.testi-card::before { content:'"'; font-family:'Playfair Display',serif; font-size:6rem; line-height:1; color:rgba(214,177,60,.15); position:absolute; top:-1rem; left:1rem; }
+
+/* ── Number counter ── */
+.counter-el { animation:count-up .8s cubic-bezier(.16,1,.3,1) both; }
+
+/* ── Feature icon ring ── */
+.icon-ring { width:64px; height:64px; border-radius:50%; border:1.5px solid rgba(214,177,60,.35); display:flex; align-items:center; justify-content:center; transition:all .4s ease; }
+.icon-ring:hover { border-color:#d6b13c; background:rgba(214,177,60,.08); transform:scale(1.1); }
+
+/* ── Page hero (sub-pages) ── */
+.page-hero-bg { background-size:cover; background-position:center; background-attachment:fixed; }
+
+/* ── CTA Banner ── */
+.cta-banner { background:linear-gradient(135deg,#1a1a1a 0%,#2d2010 50%,#1a1a1a 100%); }
+
+/* ── Overlay gradient ── */
+.overlay-dark { background:linear-gradient(to right, rgba(0,0,0,.65) 40%, rgba(0,0,0,.1) 100%); }

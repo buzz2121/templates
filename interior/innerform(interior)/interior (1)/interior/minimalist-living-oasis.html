@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Living Oasis | INNERFORM Studio</title>
+  <meta name="description" content="Explore the Minimalist Living Oasis project by INNERFORM Studio. A sanctuary of form and function in Manhattan.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◼</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-texture">
+  <div class="page-transition"></div>
+
+  <nav class="navbar document-navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo"><span class="navbar-logo-icon">iF</span> INNERFORM</a>
+      <div class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="about.html" class="navbar-link">About</a>
+        <a href="services.html" class="navbar-link">Services</a>
+        <a href="portfolio.html" class="navbar-link active">Portfolio</a>
+        <a href="testimonials.html" class="navbar-link">Testimonials</a>
+        <a href="contact.html" class="navbar-link">Contact</a>
+      </div>
+      <a href="contact.html" class="navbar-cta">Let's Talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="project-main-content">
+    <!-- This ID will be used by script.js to inject the content for 'living-1' -->
+    <div id="project-trigger" data-project-id="living-oasis"></div>
+    
+    <header class="project-hero">
+      <img src="" alt="" class="project-hero-bg" id="p-hero-img">
+      <div class="hero-bg-overlay"></div>
+      <div class="container project-hero-content reveal">
+        <div class="page-hero-label" id="p-cat">Living</div>
+        <h1 class="project-hero-title" id="p-title">Minimalist <em>Oasis</em></h1>
+        <div class="page-hero-breadcrumb" style="justify-content: flex-start; opacity: 0.8;">
+          <a href="index.html" style="color: #fff;">Home</a> <span>/</span> <a href="portfolio.html" style="color: #fff;">Portfolio</a> <span>/</span> <span id="p-breadcrumb">Minimalist Living Oasis</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-spec-grid stagger-children">
+          <div class="project-spec-item"><span class="project-spec-label">Client</span><span class="project-spec-value" id="p-client">—</span></div>
+          <div class="project-spec-item"><span class="project-spec-label">Location</span><span class="project-spec-value" id="p-location">—</span></div>
+          <div class="project-spec-item"><span class="project-spec-label">Year</span><span class="project-spec-value" id="p-year">—</span></div>
+          <div class="project-spec-item"><span class="project-spec-label">Scope</span><span class="project-spec-value" id="p-scope">—</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-narrative">
+          <div class="project-narrative-intro reveal-left">
+            Structural <span class="accent">harmony</span> and whispered luxury. We redefined the urban loft as a breathable, textured sanctuary.
+          </div>
+          <div class="project-narrative-content reveal-right" id="p-desc">
+            <!-- Project description injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-images-grid">
+      <div class="container"><div class="collage-grid" id="p-collage"></div></div>
+    </section>
+
+    <section class="next-project-section" id="p-next-section">
+      <img src="" alt="" class="next-project-bg" id="p-next-bg">
+      <div class="container reveal">
+        <div class="next-project-label">Up Next</div>
+        <h2 class="next-project-title" id="p-next-title">Next Project</h2>
+        <a href="" class="next-project-link" id="p-next-link"><span>Discover Project</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">...</footer> <!-- Footer content is simplified here as script.js handles the rest -->
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

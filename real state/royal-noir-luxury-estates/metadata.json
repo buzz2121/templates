@@ -1,0 +1,10 @@
+{
+  "name": "Royal Noir Luxury Estates",
+  "description": "Exclusively curated collection of ultra-premium real estate for the world's most discerning clientele.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

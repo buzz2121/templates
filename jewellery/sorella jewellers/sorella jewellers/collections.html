@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | SORELLA GEMS Luxury Jewellery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (min-width: 769px) {
+            .page-header {
+                padding: var(--space-header-top) 0 var(--space-header-bottom);
+                background: var(--secondary);
+                text-align: center;
+            }
+
+            .collections-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 100px;
+                padding: 100px 0;
+            }
+
+            .collection-row {
+                display: flex;
+                align-items: center;
+                gap: 80px;
+            }
+
+            .collection-row:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .collection-visual {
+                flex: 1.2;
+                height: 700px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .collection-text {
+                flex: 1;
+            }
+
+            .collection-text h2 {
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            .product-mini-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                margin-top: 50px;
+            }
+        }
+        
+        .collection-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-lux);
+        }
+
+        .collection-row:hover .collection-visual img {
+            transform: scale(1.05);
+        }
+
+        .collection-text span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .collection-text p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .product-mini {
+            height: 150px;
+            background: var(--white);
+            padding: 10px;
+            border: 1px solid var(--secondary);
+            transition: var(--transition-lux);
+            cursor: pointer;
+        }
+
+        .product-mini:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .product-mini img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 768px) {
+            /* Hero */
+            .collections-hero {
+                height: auto !important;
+                min-height: auto !important;
+                padding: 100px 0 60px !important;
+            }
+            .collections-hero div[style*="width: 60%"] {
+                display: none !important;
+            }
+            .collections-hero h1 {
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+            }
+
+            /* Filter nav */
+            .filter-nav {
+                flex-wrap: wrap !important;
+                gap: 15px !important;
+            }
+
+            /* Collection rows - stack vertically */
+            .collection-row {
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+            .collection-row:nth-child(even) {
+                flex-direction: column !important;
+            }
+            .collection-visual {
+                width: 100% !important;
+                height: 300px !important;
+                flex: none !important;
+            }
+            .collection-text {
+                flex: none !important;
+                width: 100% !important;
+            }
+            .collection-text h2 {
+                font-size: 28px !important;
+            }
+            .collection-text p {
+                max-width: 100% !important;
+            }
+
+            /* Product mini grid - 2 columns */
+            .product-mini-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+            .product-mini {
+                height: 120px !important;
+            }
+
+            /* Collections grid spacing */
+            .collections-grid {
+                gap: 60px !important;
+                padding: 40px 0 !important;
+            }
+
+            /* Modal */
+            .modal-content {
+                grid-template-columns: 1fr !important;
+            }
+            .modal-content > div:first-child {
+                height: 250px !important;
+            }
+            .modal-content > div:last-child {
+                padding: 30px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">Sorella Gems</a>
+        
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html" class="active">Collections</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="bespoke.html">Bespoke</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="cta-button">
+                Book Consultation
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="bespoke.html">Bespoke</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: 40px; width: auto;">Book Consultation</a>
+    </div>
+
+    <header class="collections-hero" style="height: 70vh; background: var(--primary); display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 100px;">
+        <div style="position: absolute; right: 0; top: 0; width: 60%; height: 100%; background-image: url('./diamond_collection_thumb_1777521969657.png'); background-size: cover; background-position: center; z-index: 1; mask-image: linear-gradient(to right, transparent, black 45%); -webkit-mask-image: linear-gradient(to right, transparent, black 45%);"></div>
+        <div class="container" style="position: relative; z-index: 2; width: 100%;">
+            <div style="max-width: 600px;">
+                <span style="font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 25px;">The Masterpiece Archive</span>
+                <h1 style="font-size: 72px; line-height: 1; margin-bottom: 30px;">Curated<br>Excellence</h1>
+                <div style="width: 60px; height: 1px; background: var(--accent); margin-bottom: 40px;"></div>
+                <p style="font-size: 18px; color: var(--text-muted); max-width: 450px; font-family: 'Playfair Display', serif; font-style: italic;">An odyssey through the rarest gemstones and most exquisite designs of the Sorella Gems house.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 60px;">
+        <div class="filter-nav">
+            <button class="filter-btn active" onclick="filterCollections('all')">All</button>
+            <button class="filter-btn" onclick="filterCollections('bridal')">Bridal</button>
+            <button class="filter-btn" onclick="filterCollections('diamond')">Diamond</button>
+            <button class="filter-btn" onclick="filterCollections('gold')">Gold</button>
+        </div>
+    </div>
+
+    <section class="container">
+        <div id="collections-container" class="collections-grid">
+            <!-- Bridal -->
+            <div id="bridal" class="collection-row reveal filter-item bridal mobile-stack">
+                <div class="collection-visual">
+                    <img src="./bridal_solitaire_ring_lux_1777526526655.png" alt="Bridal Masterpiece">
+                    <div class="dynamic-badge">New Arrival</div>
+                </div>
+                <div class="collection-text">
+                    <span>Exclusive Series</span>
+                    <h2>The Bridal Pavilion</h2>
+                    <p>Designed for the moments that define a lifetime. Our bridal collection features hand-selected diamonds set in ethereal designs that capture the essence of forever.</p>
+                    
+                    <div class="material-story" style="margin-bottom: 40px; padding: 25px; background: var(--secondary); border-left: 2px solid var(--accent);">
+                        <h4 style="font-size: 12px; margin-bottom: 10px;">The Material Story</h4>
+                        <p style="font-size: 13px; line-height: 1.6;">Every diamond in the Bridal Pavilion is a **GIA-certified D-IF solitaire**, hand-selected for its fire and brilliance. We utilize a proprietary **18k "Aurora Gold" alloy**, refined to a soft, ethereal glow that complements the natural radiance of the stone.</p>
+                    </div>
+
+                    <div class="product-mini-grid">
+                        <div class="product-mini" onclick="openQuickView('Eternal Solitaire', '$8,200', './bridal_solitaire_ring_lux_1777526526655.png')"><img src="./bridal_solitaire_ring_lux_1777526526655.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Royal Sapphire', '$6,400', './sapphire_royal_ring_lux_1777526596746.png')"><img src="./sapphire_royal_ring_lux_1777526596746.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Emerald Drops', '$3,800', './emerald_drop_earrings_lux_1777526574822.png')"><img src="./emerald_drop_earrings_lux_1777526574822.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Imperial Band', '$4,500', './bridal_collection_thumb_1777521951246.png')"><img src="./bridal_collection_thumb_1777521951246.png" alt="Product"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diamond -->
+            <div id="diamond" class="collection-row reveal filter-item diamond mobile-stack">
+                <div class="collection-visual">
+                    <img src="./diamond_palace_necklace_lux_1777526543627.png" alt="Diamonds">
+                </div>
+                <div class="collection-text">
+                    <span>Pure Radiance</span>
+                    <h2>The Diamond House</h2>
+                    <p>Brilliance in its purest form. Explore our curated selection of solitaires, chokers, and studs that exemplify the Sorella Gems standard of clarity and cut.</p>
+                    
+                    <div class="material-story" style="margin-bottom: 40px; padding: 25px; background: var(--secondary); border-left: 2px solid var(--accent);">
+                        <h4 style="font-size: 12px; margin-bottom: 10px;">Artisanal Detail</h4>
+                        <p style="font-size: 13px; line-height: 1.6;">Our signature **Micro-Pavé technique** allows for a seamless "carpet of light" effect, where the platinum setting virtually disappears behind a wall of brilliant-cut diamonds. This creates an uninterrupted flow of radiance that defines the Diamond House aesthetic.</p>
+                    </div>
+
+                    <div class="product-mini-grid">
+                        <div class="product-mini" onclick="openQuickView('Palace Necklace', '$22,800', './diamond_palace_necklace_lux_1777526543627.png')"><img src="./diamond_palace_necklace_lux_1777526543627.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Essence Pearl', '$9,200', './pearl_essence_necklace_lux_1777526613557.png')"><img src="./pearl_essence_necklace_lux_1777526613557.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Heart Ruby', '$5,600', './ruby_heart_pendant_lux_1777526631101.png')"><img src="./ruby_heart_pendant_lux_1777526631101.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Diamond Solitaire Choker', '$18,500', './diamond_collection_thumb_1777521969657.png')"><img src="./diamond_collection_thumb_1777521969657.png" alt="Product"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High Jewellery (New) -->
+            <div id="high" class="collection-row reveal filter-item all mobile-stack">
+                <div class="collection-visual">
+                    <img src="./emerald_drop_earrings_lux_1777526574822.png" alt="High Jewellery">
+                    <div class="dynamic-badge">Unique Piece</div>
+                </div>
+                <div class="collection-text">
+                    <span>One of One</span>
+                    <h2>The High Jewellery Atelier</h2>
+                    <p>Reserved for the rarest stones in existence. These one-of-a-kind masterpieces are crafted around the unique soul of a single, extraordinary gem.</p>
+                    
+                    <div class="material-story" style="margin-bottom: 40px; padding: 25px; background: var(--secondary); border-left: 2px solid var(--accent);">
+                        <h4 style="font-size: 12px; margin-bottom: 10px;">The Provenance</h4>
+                        <p style="font-size: 13px; line-height: 1.6;">Our High Jewellery pieces feature stones sourced from the **Muzo mines of Colombia** and the **Argyle mines of Australia**. Each creation is a singular architectural feat, requiring over 800 hours of hand-craftsmanship.</p>
+                    </div>
+
+                    <div class="product-mini-grid">
+                        <div class="product-mini" onclick="openQuickView('Muzo Emerald Drop', '$45,000', './emerald_drop_earrings_lux_1777526574822.png')"><img src="./emerald_drop_earrings_lux_1777526574822.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Argyle Pink Solitaire', 'Price on Request', './bridal_solitaire_ring_lux_1777526526655.png')"><img src="./bridal_solitaire_ring_lux_1777526526655.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Ocean Blue Sapphire', '$38,000', './sapphire_royal_ring_lux_1777526596746.png')"><img src="./sapphire_royal_ring_lux_1777526596746.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Palatial Ruby', '$52,000', './ruby_heart_pendant_lux_1777526631101.png')"><img src="./ruby_heart_pendant_lux_1777526631101.png" alt="Product"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold -->
+            <div id="gold" class="collection-row reveal filter-item gold mobile-stack">
+                <div class="collection-visual">
+                    <img src="./gold_heritage_bangle_lux_1777526560216.png" alt="Gold">
+                </div>
+                <div class="collection-text">
+                    <span>Time-Honored</span>
+                    <h2>Gold Classics</h2>
+                    <p>Celebrating the warmth and versatility of 18k and 22k gold. From architectural bangles to traditional masterpieces, our gold classics are built for generations.</p>
+                    
+                    <div class="material-story" style="margin-bottom: 40px; padding: 25px; background: var(--secondary); border-left: 2px solid var(--accent);">
+                        <h4 style="font-size: 12px; margin-bottom: 10px;">The Gold Standard</h4>
+                        <p style="font-size: 13px; line-height: 1.6;">Our gold is refined to the highest purity standards and alloyed with **rare palladium** for our signature "Ice White" gold or **pure copper** for our "Aurora Rose" series.</p>
+                    </div>
+
+                    <div class="product-mini-grid">
+                        <div class="product-mini" onclick="openQuickView('Heritage Bangle', '$4,800', './gold_heritage_bangle_lux_1777526560216.png')"><img src="./gold_heritage_bangle_lux_1777526560216.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Gold Chain', '$1,800', './gold_classics_thumb_1777521984050.png')"><img src="./gold_classics_thumb_1777521984050.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Atelier Ring', '$3,200', './signature_product_2_1777522058540.png')"><img src="./signature_product_2_1777522058540.png" alt="Product"></div>
+                        <div class="product-mini" onclick="openQuickView('Custom Cuff', '$5,500', './custom_design_thumb_1777521998635.png')"><img src="./custom_design_thumb_1777521998635.png" alt="Product"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeQuickView()">&times;</div>
+            <div id="modalImg" style="background-size: cover; background-position: center;"></div>
+            <div style="padding: 60px;">
+                <span id="modalCategory" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent);">Exclusive</span>
+                <h2 id="modalTitle" style="font-size: 36px; margin-top: 10px; margin-bottom: 20px;">Product Title</h2>
+                <p id="modalDesc" style="margin-bottom: 30px; font-size: 14px;">Handcrafted to perfection, this piece represents the pinnacle of our artisanal heritage.</p>
+                <p id="modalPrice" style="font-size: 24px; font-weight: 500; margin-bottom: 40px;">$0.00</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="bespoke.html" class="btn btn-primary" style="flex: 1; text-align: center;">Inquire</a>
+                    <button class="btn btn-outline" style="flex: 1;" onclick="closeQuickView()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo footer-logo">Sorella Gems</a>
+                    <p style="max-width: 300px;">Crafting timeless luxury jewellery that celebrates the artistry of life.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="collections.html#bridal">Bridal</a></li>
+                        <li><a href="collections.html#diamond">Diamonds</a></li>
+                        <li><a href="collections.html#gold">Gold Classics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html#craft">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Concierge</h4>
+                    <p style="font-size: 13px; margin-bottom: 20px;">Join our exclusive circle for early access.</p>
+                    <a href="bespoke.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 10px;">Inquire Now</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Sorella Gems JEWELLERY HOUSE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(r => {
+                const windowHeight = window.innerHeight;
+                const revealTop = r.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 150) r.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Filtering Logic
+        const filterCollections = (category) => {
+            const items = document.querySelectorAll('.filter-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                    setTimeout(() => item.classList.add('active'), 100);
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('active');
+                }
+            });
+        };
+
+        // Quick View Logic
+        const qvModal = document.getElementById('quickViewModal');
+        const openQuickView = (title, price, img) => {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalImg').style.backgroundImage = `url('${img}')`;
+            qvModal.classList.add('active');
+        };
+        const closeQuickView = () => qvModal.classList.remove('active');
+    </script>
+</body>
+</html>

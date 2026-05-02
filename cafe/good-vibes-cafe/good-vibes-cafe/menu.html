@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Menu — Good Vibes Cafe & Restro</title>
+<meta name="description" content="Explore the full menu at Good Vibes Cafe & Restro. From single-origin coffees to seasonal main courses." />
+<meta name="theme-color" content="#2B1D17" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Custom small hero for internal pages */
+  .page-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    padding-top: 80px;
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(43,29,23,.85) 0%, rgba(43,29,23,.95) 100%),
+                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=80') center/cover;
+  }
+  .page-hero h1 { margin-bottom: 12px; color: var(--gold); }
+  .page-hero p { color: rgba(255,253,250,.7); font-size: 1.1rem; }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-mark">GOOD VIBES</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">GOOD VIBES <i>Cafe</i></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">Story</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="index.html#why">Experience</a></li>
+        <li><a href="index.html#gallery">Ambience</a></li>
+        <li><a href="index.html#location">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#reserve" class="nav-cta">Reserve</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container reveal">
+    <span class="eyebrow" style="margin-bottom:12px; justify-content:center">Culinary Excellence</span>
+    <h1>Our Full Menu</h1>
+    <p>Seasonal ingredients, crafted with passion.</p>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec sec-warm" id="menu">
+  <div class="container">
+    <div class="menu-tabs reveal delay-1">
+      <button class="tab active" data-cat="all">All</button>
+      <button class="tab" data-cat="coffee">Coffee</button>
+      <button class="tab" data-cat="bev">Beverages</button>
+      <button class="tab" data-cat="dessert">Desserts</button>
+      <button class="tab" data-cat="main">Main Course</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot">
+        <div class="brand-foot">GOOD VIBES <i style="color:var(--gold);font-weight:500">Cafe</i></div>
+        <p>Where taste meets tranquility. A slow ritual brewed in the heart of the Old Quarter.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="index.html#gallery">Ambience</a></li>
+          <li><a href="index.html#reserve">Reservations</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Visit</h4>
+        <ul>
+          <li>14 Linden Lane</li>
+          <li>San Francisco, CA</li>
+          <li>+1 (415) 555-0142</li>
+          <li>hello@goodvibes.cafe</li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Newsletter</h4>
+        <p>Slow stories, seasonal menus, and quiet invitations — once a month.</p>
+        <form class="news-form" onsubmit="event.preventDefault();this.querySelector('input').value='';alert('Thank you for subscribing.')">
+          <input type="email" placeholder="Your email" required/>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div>© 2026 Good Vibes Cafe & Restro. All rights reserved.</div>
+      <div><em>Where taste meets tranquility.</em></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Loader ===== */
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hidden'),400)});
+
+/* ===== Nav scroll ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>60)});
+
+/* ===== Burger ===== */
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('mobile')});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('mobile')}));
+
+/* ===== Reveal ===== */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Menu ===== */
+const dishes=[
+  {cat:'coffee',name:'Good Vibes Signature Pour',desc:'Single-origin Ethiopian, slow-bloomed for floral clarity.',price:'$6',img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Espresso Maravilla',desc:'Double shot, dark cocoa finish, served with sparkling water.',price:'$5',img:'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Saffron Latte',desc:'Steamed milk, raw honey, and a thread of Persian saffron.',price:'$7',img:'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Cortado',desc:'Rich double espresso cut with an equal amount of velvety steamed milk.',price:'$4',img:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80'},
+  {cat:'coffee',name:'Vanilla Bean Flat White',desc:'Silky micro-foam poured over ristretto, infused with Madagascar vanilla.',price:'$5',img:'https://images.unsplash.com/photo-1574688118055-6bba416c116c?auto=format&fit=crop&w=700&q=80'},
+  
+  {cat:'bev',name:'Rose Cardamom Cooler',desc:'Cold-pressed rose, green cardamom, sparkling tonic.',price:'$8',img:'https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=700&q=80'},
+  {cat:'bev',name:'Matcha Velvet',desc:'Ceremonial-grade matcha whisked with oat cream.',price:'$7',img:'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=700&q=80'},
+  {cat:'bev',name:'Lavender Lemon Tonic',desc:'House-made lavender syrup, fresh lemon, sparkling water.',price:'$6',img:'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=700&q=80'},
+  {cat:'bev',name:'Iced Peach Sencha',desc:'Cold-brewed Japanese green tea with fresh peach nectar.',price:'$6',img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80'},
+  
+  {cat:'dessert',name:'Tiramisu Classico',desc:'Mascarpone, espresso-soaked savoiardi, dusted cocoa.',price:'$9',img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=80'},
+  {cat:'dessert',name:'Honey Fig Tart',desc:'Almond crust, mascarpone, fresh figs, wildflower honey.',price:'$10',img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80'},
+  {cat:'dessert',name:'Dark Chocolate Lava Cake',desc:'Valrhona chocolate, molten center, vanilla bean gelato.',price:'$12',img:'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80'},
+  {cat:'dessert',name:'Lemon Ricotta Cheesecake',desc:'Light ricotta, Meyer lemon zest, crisp graham crust.',price:'$9',img:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80'},
+  
+  {cat:'main',name:'Truffle Mushroom Pasta',desc:'Hand-cut tagliatelle, wild mushrooms, shaved truffle.',price:'$22',img:'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Herb-Crusted Salmon',desc:'Atlantic salmon, lemon thyme, charred asparagus, beurre blanc.',price:'$26',img:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Wagyu Beef Burger',desc:'Brioche bun, caramelized onions, gruyere, served with truffle fries.',price:'$24',img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Wild Mushroom Risotto',desc:'Creamy Arborio rice, porcini mushrooms, parmesan crisp.',price:'$20',img:'https://images.unsplash.com/photo-1633504581786-316c8002b1b9?auto=format&fit=crop&w=700&q=80'},
+  {cat:'main',name:'Avocado Tartine',desc:'Artisan sourdough, smashed avocado, poached egg, chili flakes.',price:'$16',img:'https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?auto=format&fit=crop&w=700&q=80'}
+];
+const grid=document.getElementById('menuGrid');
+function renderMenu(cat='all'){
+  grid.innerHTML='';
+  dishes.filter(d=>cat==='all'||d.cat===cat).forEach((d,i)=>{
+    const el=document.createElement('article');
+    el.className='dish reveal';if(i%3===1)el.classList.add('delay-1');if(i%3===2)el.classList.add('delay-2');
+    el.innerHTML=`<div class="dish-img"><img src="${d.img}" alt="${d.name}" loading="lazy"/></div>
+      <div class="dish-body"><div class="dish-head"><h3>${d.name}</h3><div class="dish-price">${d.price}</div></div>
+      <p class="dish-desc">${d.desc}</p></div>`;
+    grid.appendChild(el);io.observe(el);
+  });
+}
+renderMenu();
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');renderMenu(t.dataset.cat);
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | INNERFORM Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-texture">
+  <!-- Page Transition -->
+  <div class="page-transition"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar document-navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo"><span class="navbar-logo-icon">iF</span> INNERFORM</a>
+      <div class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="about.html" class="navbar-link">About</a>
+        <a href="services.html" class="navbar-link active">Services</a>
+        <a href="portfolio.html" class="navbar-link">Portfolio</a>
+        <a href="testimonials.html" class="navbar-link">Testimonials</a>
+        <a href="contact.html" class="navbar-link">Contact</a>
+      </div>
+      <a href="contact.html" class="navbar-cta">Let's Talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="navbar-mobile" id="navbar-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main id="service-container">
+    <!-- HERO -->
+    <header class="project-hero">
+      <img src="" alt="" class="project-hero-bg" id="s-hero-img">
+      <div class="hero-bg-overlay"></div>
+      <div class="container project-hero-content reveal">
+        <div class="page-hero-label">Design Excellence</div>
+        <h1 class="project-hero-title" id="s-title">Service <em>Title</em></h1>
+        <div class="page-hero-breadcrumb">
+          <a href="index.html" style="color:#fff;">Home</a> <span>/</span> <a href="services.html" style="color:#fff;">Services</a> <span>/</span> <span id="s-breadcrumb">Detail</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="section">
+      <div class="container">
+        <div class="project-info-grid">
+          <div class="project-info-text reveal">
+            <h2>The Approach</h2>
+            <div id="s-desc">
+              <!-- Description injected here -->
+            </div>
+          </div>
+          <div class="project-meta-sidebar reveal">
+            <h3 style="margin-bottom: 2rem; font-family: var(--font-heading);">Key Features</h3>
+            <ul class="feature-checklist" id="s-features-list">
+              <!-- Features list injected here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REUSED CAROUSEL COMPONENT (FOR UPSYNC) -->
+    <section class="section-services-carousel" style="background: var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+          <h2 class="section-title">Other <em>Capabilities</em></h2>
+        </div>
+        <div class="services-carousel-container" id="services-carousel">
+          <div class="carousel-nav-vertical" id="carousel-nav"></div>
+          <div class="carousel-display" id="carousel-display"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title" style="margin-bottom: 4rem;">Project <em>Gallery</em></h2>
+        <div class="service-gallery-grid" id="s-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+          <!-- Gallery images injected here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <style>
+    .feature-checklist { list-style: none; padding: 0; }
+    .feature-checklist li {
+      display: flex; align-items: flex-start;
+      margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 1.1rem;
+    }
+  </style>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="text-align: center;"><span>&copy; 2024 INNERFORM Studio. Architecture for the soul.</span><span>Designed & Developed by <a href="https://buzz-entertainment.com" target="_blank" rel="noopener noreferrer">Buzzentertainment — buzz-entertainment.com</a></span></div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

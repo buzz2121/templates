@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelian Luxury Hotels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#222222',
+                        gold: { DEFAULT: '#d6b13c', dark: '#b8952e', light: '#e8d07a' },
+                        secondary: '#f8fafc'
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #222222; }
+        h1, h2, h3, h4, h5, h6, .script-font { font-family: 'Playfair Display', serif; }
+        html { scroll-behavior: smooth; }
+
+        /* ── Hero Background with Parallax ── */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
+                url('Aura Luxury Resorts/hero_exterior.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* ── Keyframes ── */
+        @keyframes fadeUp   { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeLeft { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeRight{ from { opacity:0; transform:translateX(40px);  } to { opacity:1; transform:translateX(0); } }
+        @keyframes scaleIn  { from { opacity:0; transform:scale(0.88); } to { opacity:1; transform:scale(1); } }
+        @keyframes pulse-glow { 0%,100%{box-shadow:0 0 0 0 rgba(214,177,60,0.4);} 50%{box-shadow:0 0 0 12px rgba(214,177,60,0);} }
+        @keyframes bob      { 0%,100%{transform:translateY(0) translateX(-50%);} 50%{transform:translateY(8px) translateX(-50%);} }
+        @keyframes shimmer  { 0%{background-position:-200% center;} 100%{background-position:200% center;} }
+        @keyframes barGrow  { from{transform:scaleX(0);} to{transform:scaleX(1);} }
+        @keyframes countUp  { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+
+        /* ── Hero entrance animations ── */
+        .hero-badge  { animation: fadeUp  0.7s cubic-bezier(.16,1,.3,1) 0.3s both; }
+        .hero-title  { animation: fadeUp  0.9s cubic-bezier(.16,1,.3,1) 0.55s both; }
+        .hero-sub    { animation: fadeUp  0.9s cubic-bezier(.16,1,.3,1) 0.75s both; }
+        .hero-btns   { animation: fadeUp  0.9s cubic-bezier(.16,1,.3,1) 0.95s both; }
+
+        /* ── Scroll reveal base ── */
+        .reveal { opacity:0; transform:translateY(36px); transition: opacity 0.75s cubic-bezier(.16,1,.3,1), transform 0.75s cubic-bezier(.16,1,.3,1); }
+        .reveal.from-left  { transform:translateX(-36px); }
+        .reveal.from-right { transform:translateX(36px); }
+        .reveal.scale      { transform:scale(0.92); }
+        .reveal.visible    { opacity:1; transform:none; }
+        .reveal-delay-1 { transition-delay:0.1s; }
+        .reveal-delay-2 { transition-delay:0.2s; }
+        .reveal-delay-3 { transition-delay:0.3s; }
+        .reveal-delay-4 { transition-delay:0.4s; }
+
+        /* ── Scroll indicator ── */
+        .scroll-indicator { animation: bob 2s ease-in-out infinite; transform-origin: center; }
+
+        /* ── Nav links underline effect ── */
+        nav a:not(.rounded-full)::after { content:''; display:block; height:1px; background:#d6b13c; transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+        nav a:not(.rounded-full):hover::after { transform:scaleX(1); }
+
+        /* ── Cards ── */
+        .card-hover { transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s cubic-bezier(.16,1,.3,1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow:0 32px 64px -16px rgba(0,0,0,0.18); }
+
+        /* ── Image zoom on hover ── */
+        .img-zoom { overflow:hidden; }
+        .img-zoom img { transition: transform 0.7s cubic-bezier(.16,1,.3,1); }
+        .img-zoom:hover img { transform: scale(1.08); }
+
+        /* ── Gold shimmer button ── */
+        .btn-shimmer {
+            background: linear-gradient(90deg, #d6b13c 0%, #f0d060 40%, #d6b13c 60%, #b8952e 100%);
+            background-size: 200% auto;
+            transition: background-position 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-shimmer:hover { background-position: right center; transform:translateY(-2px); box-shadow:0 12px 28px -6px rgba(214,177,60,0.45); }
+
+        /* ── Gold accent bar ── */
+        .gold-bar { display:block; width:48px; height:2px; background:#d6b13c; margin-bottom:1.5rem; transform-origin:left; }
+        .gold-bar.animated { animation: barGrow 0.8s cubic-bezier(.16,1,.3,1) both; }
+
+        /* ── Stat count animation ── */
+        .stat-num { animation: countUp 0.8s cubic-bezier(.16,1,.3,1) both; }
+
+        /* ── Offer card image hover ── */
+        .offer-card .offer-img { transition: transform 0.6s cubic-bezier(.16,1,.3,1); }
+        .offer-card:hover .offer-img { transform: scale(1.06); }
+
+        /* ── Pulse glow on Book Now ── */
+        .pulse-gold { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+        /* ── Section divider shimmer ── */
+        .divider-gold { width:60px; height:2px; background:linear-gradient(90deg,transparent,#d6b13c,transparent); margin:0 auto 1.5rem; }
+    </style>
+    <script src="animations.js" defer></script>
+</head>
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+            <!-- Brand -->
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="logo-circle w-10 h-10 rounded-full bg-gold flex items-center justify-center group-hover:bg-gold-dark transition-colors duration-300">
+                    <span class="text-white font-heading font-bold text-xl">A</span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="brand-name block font-heading text-lg font-bold text-white leading-none">Aurelian</span>
+                    <div class="brand-sub text-[10px] uppercase tracking-widest text-white/60">Luxury Hotels</div>
+                </div>
+            </a>
+
+            <!-- Links -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="nav-active px-4 py-2 rounded-full text-sm transition-all duration-300 text-gold bg-gold/15 font-semibold">Home</a>
+                <a href="about.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white">About</a>
+                <a href="rooms.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white">Rooms</a>
+                <a href="amenities.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white">Amenities</a>
+                <a href="gallery.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white/80 hover:text-white">Gallery</a>
+                <a href="book.html" class="btn-book ml-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 text-white bg-gold hover:bg-gold-dark shadow-md shadow-gold/20">Book Now</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center hero-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full z-10 pt-20">
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-4 hero-badge">
+                    <span class="text-gold text-sm tracking-[0.1em]">★★★★★</span>
+                    <span class="text-gold text-[11px] font-semibold tracking-[0.3em] uppercase">Luxury Collection</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-[6rem] text-white mb-6 drop-shadow-xl leading-[1.1] hero-title">
+                    <div class="flex flex-wrap items-baseline gap-4 md:gap-6">
+                        <span class="font-heading font-medium">Experience</span>
+                        <span class="font-heading italic text-gold font-light">Luxury</span>
+                    </div>
+                    <span class="block font-heading font-medium">& Comfort</span>
+                </h1>
+                
+                <p class="text-white/95 font-body text-lg md:text-xl max-w-xl mb-10 font-light leading-relaxed drop-shadow-md hero-sub">Discover an unparalleled retreat where timeless elegance meets modern sophistication. Your extraordinary escape awaits.</p>
+                
+                <div class="flex flex-wrap items-center gap-5 hero-btns">
+                    <a href="book.html" class="px-10 py-4 btn-shimmer text-white font-medium rounded-full pulse-gold">Book Now</a>
+                    <a href="rooms.html" class="px-10 py-4 bg-white/90 backdrop-blur-md text-charcoal font-medium rounded-full hover:bg-white transition-all duration-300 hover:-translate-y-1">Explore Rooms</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discover Scroll Indicator -->
+        <div class="scroll-indicator absolute bottom-10 left-1/2 flex flex-col items-center gap-2 opacity-80">
+            <span class="text-white text-[10px] tracking-[0.3em] uppercase font-semibold">Discover</span>
+            <div class="w-[1px] h-8 bg-white/60"></div>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="flex-1 reveal from-left">
+                    <span class="gold-bar"></span>
+                    <p class="text-gold font-bold tracking-[0.2em] uppercase text-xs mb-4">Our Story</p>
+                    <h2 class="text-4xl md:text-5xl font-heading text-charcoal mb-6 leading-tight">A Legacy of <br><span class="italic text-gold">Refined</span> Hospitality</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed font-light text-lg">Since 1998, The Aurelian has set the standard for luxury hospitality. Nestled in the heart of the city, our hotel blends timeless architecture with contemporary comfort.</p>
+                    <p class="text-gray-600 mb-10 leading-relaxed font-light text-lg">Every detail — from our hand-selected linens to our world-renowned culinary experiences — is crafted to exceed expectations.</p>
+                    
+                    <div class="flex gap-8 mb-10 border-t border-gray-100 pt-8">
+                        <div class="stat-num reveal-delay-1">
+                            <p class="text-3xl font-heading text-charcoal mb-1" data-count="25">25+</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Years of Excellence</p>
+                        </div>
+                        <div class="stat-num reveal-delay-2">
+                            <p class="text-3xl font-heading text-charcoal mb-1">4.9</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Guest Rating</p>
+                        </div>
+                        <div class="stat-num reveal-delay-3">
+                            <p class="text-3xl font-heading text-charcoal mb-1">50K+</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Happy Guests</p>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="inline-block px-8 py-3.5 bg-charcoal text-white font-medium rounded-xl hover:bg-gold hover:-translate-y-1 transition-all duration-300 text-sm">Learn Our Story</a>
+                </div>
+                <div class="flex-1 relative reveal from-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="img-zoom rounded-2xl mt-12 shadow-xl"><img src="Aura Luxury Resorts/restaurant.png" class="rounded-2xl w-full h-80 object-cover"></div>
+                        <div class="img-zoom rounded-2xl shadow-xl"><img src="Aura Luxury Resorts/lobby.png" class="rounded-2xl w-full h-80 object-cover"></div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                        <div class="w-20 h-20 border border-gold rounded-full flex items-center justify-center text-gold font-heading text-3xl font-bold">A</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="divider-gold"></div>
+                <p class="text-gold font-bold tracking-[0.2em] uppercase text-xs mb-4">Exclusive Deals</p>
+                <h2 class="text-4xl md:text-5xl font-heading text-charcoal">Special Offers</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Offer 1 -->
+                <div class="offer-card card-hover group bg-white rounded-2xl overflow-hidden shadow-sm border border-charcoal/5 reveal reveal-delay-1">
+                    <div class="relative h-56 img-zoom">
+                        <img src="Aura Luxury Resorts/infinity_pool.png" class="w-full h-full object-cover offer-img">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-charcoal px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Limited Offer</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-heading font-semibold text-charcoal">Honeymoon Escape</h3>
+                            <span class="text-gold font-bold text-lg">20% off</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 font-light leading-relaxed">Celebrate your love with rose petals, champagne on arrival, private dinner and spa access for two.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                            <span class="text-xs text-gray-400">Valid through June 2026</span>
+                            <a href="book.html" class="px-5 py-2 bg-charcoal text-white text-xs font-semibold rounded-lg hover:bg-gold transition-colors duration-300">Claim Offer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="offer-card card-hover group bg-white rounded-2xl overflow-hidden shadow-sm border border-charcoal/5 reveal reveal-delay-2">
+                    <div class="relative h-56 img-zoom">
+                        <img src="Aura Luxury Resorts/spa.png" class="w-full h-full object-cover offer-img">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-charcoal px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Early Bird</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-heading font-semibold text-charcoal">Advance Booking Deal</h3>
+                            <span class="text-gold font-bold text-lg">30% off</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 font-light leading-relaxed">Book 30 days in advance and enjoy significant savings on any room category with complimentary breakfast.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                            <span class="text-xs text-gray-400">Book 30 days ahead</span>
+                            <a href="book.html" class="px-5 py-2 bg-charcoal text-white text-xs font-semibold rounded-lg hover:bg-gold transition-colors duration-300">Claim Offer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="offer-card card-hover group bg-white rounded-2xl overflow-hidden shadow-sm border border-charcoal/5 reveal reveal-delay-3">
+                    <div class="relative h-56 img-zoom">
+                        <img src="Aura Luxury Resorts/infinity_pool.png" class="w-full h-full object-cover offer-img">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-charcoal px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Extended Stay</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-heading font-semibold text-charcoal">Long Stay Package</h3>
+                            <span class="text-gold font-bold text-sm">Stay 5, pay 4</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 font-light leading-relaxed">Unwind for longer. Stay 5 or more nights and receive daily spa credits, laundry service, and a city tour.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                            <span class="text-xs text-gray-400">Min. 5 nights</span>
+                            <a href="book.html" class="px-5 py-2 bg-charcoal text-white text-xs font-semibold rounded-lg hover:bg-gold transition-colors duration-300">Claim Offer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Suites -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-2xl mx-auto reveal">
+                <div class="divider-gold"></div>
+                <p class="text-gold font-bold tracking-[0.2em] uppercase text-xs mb-4">Accommodations</p>
+                <h2 class="text-4xl md:text-5xl font-heading text-charcoal mb-6">Rooms & Suites</h2>
+                <p class="text-gray-500 font-light">Each room is a sanctuary of comfort, designed with meticulous attention to detail and adorned with premium amenities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Suite 1: Deluxe Room -->
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col border border-gray-50 reveal reveal-delay-1">
+                    <div class="img-zoom"><img src="Aura Luxury Resorts/deluxe_room.png" class="w-full h-64 object-cover" alt="Deluxe Room"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-heading font-semibold text-charcoal">Deluxe Room</h3>
+                            <div class="text-right">
+                                <span class="text-xl font-bold text-gold">$ 299</span>
+                                <span class="block text-[10px] text-gray-400 font-light tracking-wide uppercase mt-0.5">/ night</span>
+                            </div>
+                        </div>
+                        
+                        <span class="text-[11px] text-gray-400 tracking-widest uppercase font-medium mb-4 block">45 M&sup2;</span>
+                        
+                        <p class="text-gray-500 text-sm leading-relaxed font-light h-16">Elegantly appointed with premium furnishings and breathtaking ocean views.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8 mt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">WiFi</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Smart TV</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Mini Bar</span>
+                        </div>
+                        
+                        <a href="book.html" class="mt-auto block text-center w-full bg-[#222222] hover:bg-black text-white py-3.5 rounded-xl text-sm font-medium transition-colors">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Suite 2: Executive Suite -->
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col border border-gray-50 reveal reveal-delay-2">
+                    <div class="img-zoom"><img src="Aura Luxury Resorts/exec_suite.png" class="w-full h-64 object-cover" alt="Executive Suite"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-heading font-semibold text-charcoal">Executive Suite</h3>
+                            <div class="text-right">
+                                <span class="text-xl font-bold text-gold">$ 549</span>
+                                <span class="block text-[10px] text-gray-400 font-light tracking-wide uppercase mt-0.5">/ night</span>
+                            </div>
+                        </div>
+                        
+                        <span class="text-[11px] text-gray-400 tracking-widest uppercase font-medium mb-4 block">78 M&sup2;</span>
+                        
+                        <p class="text-gray-500 text-sm leading-relaxed font-light h-16">A spacious retreat with separate living area and panoramic city skyline views.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8 mt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Balcony</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Jacuzzi</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Lounge</span>
+                        </div>
+                        
+                        <a href="book.html" class="mt-auto block text-center w-full bg-[#222222] hover:bg-black text-white py-3.5 rounded-xl text-sm font-medium transition-colors">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Suite 3: Presidential Suite -->
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col border border-gray-50 reveal reveal-delay-3">
+                    <div class="img-zoom"><img src="Aura Luxury Resorts/pres_suite.png" class="w-full h-64 object-cover" alt="Presidential Suite"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-heading font-semibold text-charcoal">Presidential Suite</h3>
+                            <div class="text-right">
+                                <span class="text-xl font-bold text-gold">$ 1299</span>
+                                <span class="block text-[10px] text-gray-400 font-light tracking-wide uppercase mt-0.5">/ night</span>
+                            </div>
+                        </div>
+                        
+                        <span class="text-[11px] text-gray-400 tracking-widest uppercase font-medium mb-4 block">150 M&sup2;</span>
+                        
+                        <p class="text-gray-500 text-sm leading-relaxed font-light h-16">The pinnacle of luxury &mdash; a grand suite with bespoke interiors and dedicated butler.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8 mt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Terrace</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Spa Bath</span>
+                            <span class="px-3 py-1.5 bg-gray-50 text-gray-600 text-[11px] font-medium rounded-md border border-gray-100">Butler</span>
+                        </div>
+                        
+                        <a href="book.html" class="mt-auto block text-center w-full bg-[#222222] hover:bg-black text-white py-3.5 rounded-xl text-sm font-medium transition-colors">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="rooms.html" class="inline-block px-10 py-4 border-2 border-charcoal text-charcoal font-semibold rounded-full hover:bg-charcoal hover:text-white transition-all duration-300">View All Accommodations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-[#faf9f7]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="gold-bar-center"></span>
+                <p class="tag tag-gold mb-4">Why Aurelian</p>
+                <h2 class="text-4xl md:text-5xl font-heading text-charcoal mb-4">The Aurelian Difference</h2>
+                <p class="text-gray-500 font-light max-w-xl mx-auto">Every stay is a masterclass in refined living — here's why discerning travellers choose us.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center reveal reveal-d1">
+                    <div class="icon-ring mx-auto mb-5 float-anim" style="animation-delay:0s">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl text-charcoal mb-2">5-Star Rated</h3>
+                    <p class="text-gray-500 text-sm font-light">Consistently rated among the world's finest luxury hotel collections by global travel authorities.</p>
+                </div>
+                <div class="text-center reveal reveal-d2">
+                    <div class="icon-ring mx-auto mb-5 float-anim" style="animation-delay:.4s">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl text-charcoal mb-2">Personal Butler</h3>
+                    <p class="text-gray-500 text-sm font-light">Every guest receives a dedicated personal butler available 24/7 for any request, however bespoke.</p>
+                </div>
+                <div class="text-center reveal reveal-d3">
+                    <div class="icon-ring mx-auto mb-5 float-anim" style="animation-delay:.8s">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.1 1.837 2.175v1.688"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl text-charcoal mb-2">Michelin Dining</h3>
+                    <p class="text-gray-500 text-sm font-light">Our Michelin-starred restaurant offers curated tasting menus crafted by world-class executive chefs.</p>
+                </div>
+                <div class="text-center reveal reveal-d4">
+                    <div class="icon-ring mx-auto mb-5 float-anim" style="animation-delay:1.2s">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl text-charcoal mb-2">Holistic Spa</h3>
+                    <p class="text-gray-500 text-sm font-light">Rejuvenate at our award-winning spa featuring ancient rituals blended with modern wellness therapies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="gold-bar-center"></span>
+                <p class="tag tag-gold mb-4">Guest Stories</p>
+                <h2 class="text-4xl md:text-5xl font-heading text-charcoal">What Our Guests Say</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testi-card card-lift bg-[#faf9f7] rounded-3xl p-8 border border-gray-100 reveal reveal-d1">
+                    <div class="flex gap-1 mb-4">★★★★★</div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-sm">"An absolutely transformative experience. The attention to detail is beyond anything I've encountered in 30 years of luxury travel. Aurelian has set a new benchmark."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-heading font-bold">S</div>
+                        <div><p class="font-semibold text-sm text-charcoal">Sarah Mitchell</p><p class="text-xs text-gray-400">London, UK</p></div>
+                    </div>
+                </div>
+                <div class="testi-card card-lift bg-[#faf9f7] rounded-3xl p-8 border border-gray-100 reveal reveal-d2">
+                    <div class="flex gap-1 mb-4 text-gold">★★★★★</div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-sm">"The Presidential Suite exceeded every expectation. The private butler, the Michelin-starred breakfast in bed, the spa — every moment felt like a dream crafted just for us."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-heading font-bold">J</div>
+                        <div><p class="font-semibold text-sm text-charcoal">James & Elena Russo</p><p class="text-xs text-gray-400">Milan, Italy</p></div>
+                    </div>
+                </div>
+                <div class="testi-card card-lift bg-[#faf9f7] rounded-3xl p-8 border border-gray-100 reveal reveal-d3">
+                    <div class="flex gap-1 mb-4 text-gold">★★★★★</div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6 text-sm">"From arrival to departure, every single interaction was flawless. The ocean view suite is breathtaking. I've already booked my return stay for next spring."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-heading font-bold">A</div>
+                        <div><p class="font-semibold text-sm text-charcoal">Aisha Al-Farsi</p><p class="text-xs text-gray-400">Dubai, UAE</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image:url('Aura Luxury Resorts/hero_exterior.png');background-size:cover;background-position:center;"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <span class="gold-bar-center"></span>
+            <p class="tag tag-white mb-6">Limited Availability</p>
+            <h2 class="text-4xl md:text-6xl font-heading text-white mb-6 leading-tight">Begin Your <span class="italic text-gold">Extraordinary</span> Journey</h2>
+            <p class="text-white/75 font-light text-lg mb-10 max-w-xl mx-auto">Reserve your suite today and receive complimentary airport transfer, daily breakfast, and a welcome amenity of your choice.</p>
+            <div class="flex flex-wrap justify-center gap-5">
+                <a href="book.html" class="btn-gold px-10 py-4 rounded-full font-semibold text-sm pulse-gold">Reserve Your Suite</a>
+                <a href="rooms.html" class="px-10 py-4 rounded-full font-semibold text-sm text-white border border-white/30 hover:bg-white/10 transition-all duration-300">Explore Rooms</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-[#faf9f7]">
+        <div class="max-w-2xl mx-auto px-6 text-center reveal">
+            <span class="gold-bar-center"></span>
+            <h2 class="text-3xl font-heading text-charcoal mb-3">Stay in the Know</h2>
+            <p class="text-gray-500 font-light mb-8">Subscribe for exclusive offers, seasonal packages, and curated travel inspiration from Aurelian.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false">
+                <input type="email" placeholder="Your email address" class="flex-1 px-5 py-3.5 rounded-full border border-gray-200 focus:outline-none focus:border-gold text-sm bg-white transition-all duration-300">
+                <button type="submit" class="btn-gold px-8 py-3.5 rounded-full text-sm font-semibold whitespace-nowrap">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ PREMIUM FOOTER ═══════════ -->
+    <footer style="background:linear-gradient(180deg,#111111 0%,#0a0a0a 100%);" class="text-white pt-20 pb-0 overflow-hidden relative">
+
+        <!-- Gold top line -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#d6b13c,transparent);"></div>
+
+        <!-- Decorative background A -->
+        <div class="absolute top-0 right-0 select-none pointer-events-none overflow-hidden" style="opacity:.03;">
+            <span style="font-family:'Playfair Display',serif;font-size:28rem;line-height:1;color:#d6b13c;">A</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+            <!-- Top row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-16 pb-12">
+
+                <!-- Brand column -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="logo-circle w-12 h-12 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-heading font-bold text-2xl">A</span>
+                        </div>
+                        <div>
+                            <span class="block font-heading text-xl font-bold text-white leading-none">Aurelian</span>
+                            <span class="text-[10px] uppercase tracking-[0.25em] text-white/40">Luxury Hotels</span>
+                        </div>
+                    </div>
+                    <p class="text-white/50 text-sm font-light leading-relaxed mb-8">
+                        Elevating hospitality since 1998 through impeccable design, bespoke service, and unforgettable experiences.
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore column -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-6">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Home</a></li>
+                        <li><a href="about.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Our Story</a></li>
+                        <li><a href="rooms.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Suites & Rooms</a></li>
+                        <li><a href="amenities.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Amenities</a></li>
+                        <li><a href="gallery.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Gallery</a></li>
+                        <li><a href="book.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Book a Stay</a></li>
+                    </ul>
+                </div>
+
+                <!-- Experiences column -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-6">Experiences</h4>
+                    <ul class="space-y-3">
+                        <li><a href="amenities.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">The Sanctum Spa</a></li>
+                        <li><a href="amenities.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Aurum Restaurant</a></li>
+                        <li><a href="amenities.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Infinity Pool</a></li>
+                        <li><a href="amenities.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Fitness Pavilion</a></li>
+                        <li><a href="book.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Special Offers</a></li>
+                        <li><a href="book.html" class="text-white/50 text-sm font-light hover:text-white hover:pl-2 transition-all duration-300 inline-block">Private Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact column -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-6">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            <span class="text-white/50 text-sm font-light leading-relaxed">12 Aurelian Boulevard,<br>Monaco, MC 98000</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                            <a href="tel:+18002873526" class="text-white/50 text-sm font-light hover:text-white transition-colors">+1 (800) 287-3526</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <a href="mailto:reservations@aurelian.com" class="text-white/50 text-sm font-light hover:text-white transition-colors">reservations@aurelian.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span class="text-white/50 text-sm font-light">Reservations: 24 / 7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Gold divider -->
+            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(214,177,60,0.3),transparent);"></div>
+
+            <!-- Bottom bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 py-6">
+                <p class="text-white/30 text-xs tracking-widest uppercase">&copy; 2026 Aurelian Luxury Hotels. All rights reserved.</p>
+                <div class="flex gap-6 text-xs text-white/30">
+                    <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-gold transition-colors">Cookie Policy</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-white/30 text-xs">Developed by</span>
+                    <span class="text-gold text-xs">Buzz Entertainment</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ═══════════ END FOOTER ═══════════ -->
+
+    <!-- Script -->
+    <script>
+        // Navbar
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }, {passive:true});
+
+        // Scroll Reveal
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    e.target.querySelectorAll('.gold-bar').forEach(b => b.classList.add('visible'));
+                    obs.unobserve(e.target);
+                }
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Parallax hero
+        const hero = document.querySelector('.hero-bg');
+        window.addEventListener('scroll', () => {
+            if(hero) hero.style.backgroundPositionY = `calc(50% + ${window.scrollY * 0.28}px)`;
+        }, {passive:true});
+
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

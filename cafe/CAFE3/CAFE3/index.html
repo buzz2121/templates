@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurel | Fine Dining Restaurant</title>
+  <meta name="description" content="Aurel — An intimate fine dining experience where every dish tells a story. Discover our curated menu, meet our chefs, and reserve your table today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1a1a1a',
+            cream: '#f8f5f0',
+            gold: '#c19d68',
+            'gold-dark': '#a07d4a',
+            'gold-light': '#d4b896',
+            'charcoal-light': '#2e2e2e',
+            'charcoal-mid': '#3d3d3d',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Jost', 'Inter', 'sans-serif'],
+            script: ['Dancing Script', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-charcoal font-sans overflow-x-hidden">
+
+  <!-- ═══════════════════════ PAGE LOADER ═══════════════════════ -->
+  <div id="page-loader" class="fixed inset-0 z-[9999] bg-charcoal flex flex-col items-center justify-center">
+    <div class="loader-logo font-serif text-4xl text-cream tracking-widest mb-8 opacity-0">AUREL</div>
+    <div class="loader-bar-track w-48 h-px bg-charcoal-mid relative overflow-hidden">
+      <div class="loader-bar absolute top-0 left-0 h-full w-full bg-gold origin-left scale-x-0"></div>
+    </div>
+    <div class="loader-tagline font-sans text-xs text-gold tracking-[0.3em] mt-6 opacity-0 uppercase">Fine Dining</div>
+  </div>
+
+  <!-- ═══════════════════════ HEADER / NAV ═══════════════════════ -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 mix-blend-normal">
+    <nav class="nav-container flex items-center justify-between px-8 py-6 lg:px-16 transition-all duration-500">
+      <!-- Logo -->
+      <a href="index.html" class="font-serif text-2xl text-cream tracking-[0.2em] hover:text-gold transition-colors duration-300">AUREL</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden lg:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300 active-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Menu</a></li>
+        <li><a href="about.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Our Story</a></li>
+        <li><a href="booking.html" class="nav-link text-cream text-sm font-sans tracking-widest uppercase hover:text-gold transition-colors duration-300">Reserve</a></li>
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-6">
+        <button id="cart-toggle" class="relative p-2 text-cream hover:text-gold transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count hidden">0</span>
+        </button>
+        <a href="booking.html" class="hidden lg:inline-block btn-gold">Book a Table</a>
+        <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-6 h-px bg-cream transition-all duration-300"></span>
+          <span class="ham-line block w-4 h-px bg-gold transition-all duration-300"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════ MOBILE OVERLAY NAV ═══════════════════════ -->
+  <div id="mobile-nav" class="fixed inset-0 z-40 bg-charcoal flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+    <nav class="flex flex-col items-center gap-10">
+      <a href="index.html" class="mobile-nav-link font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Home</a>
+      <a href="menu.html" class="mobile-nav-link font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Menu</a>
+      <a href="about.html" class="mobile-nav-link font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Our Story</a>
+      <a href="booking.html" class="mobile-nav-link font-serif text-4xl text-cream hover:text-gold transition-colors duration-300">Reserve</a>
+    </nav>
+    <div class="absolute bottom-12 flex gap-8">
+      <a href="#" class="text-gold-light text-sm tracking-widest uppercase hover:text-gold transition-colors">Instagram</a>
+      <a href="#" class="text-gold-light text-sm tracking-widest uppercase hover:text-gold transition-colors">Twitter</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════ HERO SECTION ═══════════════════════ -->
+    <section id="hero" class="relative h-screen flex overflow-hidden">
+
+      <!-- Left vertical panel -->
+      <div class="hero-left hidden lg:flex flex-col justify-between py-20 px-8 w-20 bg-charcoal z-10">
+        <div class="flex flex-col gap-8 items-center">
+          <a href="#" class="vertical-text text-gold text-xs tracking-[0.4em] uppercase font-sans hover:text-gold-light transition-colors" style="writing-mode:vertical-rl; transform:rotate(180deg)">Instagram</a>
+          <a href="#" class="vertical-text text-gold text-xs tracking-[0.4em] uppercase font-sans hover:text-gold-light transition-colors" style="writing-mode:vertical-rl; transform:rotate(180deg)">Twitter</a>
+        </div>
+        <div>
+          <span class="text-charcoal-mid text-xs" style="writing-mode:vertical-rl; transform:rotate(180deg)">© 2025 Aurel</span>
+        </div>
+      </div>
+
+      <!-- Center hero content -->
+      <div class="flex-1 relative flex items-center">
+        <!-- Background image (right side bleeds into here) -->
+        <div class="hero-bg absolute inset-0 overflow-hidden">
+          <img src="images/hero-bg.jpg" 
+               alt="Fine dining ambiance"
+               class="w-full h-full object-cover scale-105 parallax-bg"
+               id="hero-img" />
+          <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/20"></div>
+        </div>
+
+        <!-- Text content -->
+        <div class="relative z-10 px-8 lg:px-20 max-w-4xl">
+          <p class="hero-sup font-sans text-gold text-xs tracking-[0.5em] uppercase mb-6 opacity-0">Est. 2019 — New York</p>
+          <h1 class="hero-heading font-serif text-cream leading-[0.9] mb-8 overflow-hidden">
+            <span class="hero-line block text-7xl lg:text-9xl font-semibold translate-y-full">Where</span>
+            <span class="hero-line block text-7xl lg:text-9xl italic font-normal text-gold translate-y-full">Flavour</span>
+            <span class="hero-line block text-7xl lg:text-9xl font-semibold translate-y-full">Speaks.</span>
+          </h1>
+          <p class="hero-desc font-sans text-cream/70 text-lg leading-relaxed max-w-md mb-10 opacity-0">An intimate experience where artisan cuisine meets curated elegance — crafted for those who savour the extraordinary.</p>
+          <div class="hero-cta flex gap-6 opacity-0">
+            <a href="menu.html" class="btn-gold">Explore Menu</a>
+            <a href="booking.html" class="btn-outline">Reserve Table</a>
+          </div>
+        </div>
+
+        <!-- Floating scroll indicator -->
+        <div class="absolute bottom-10 right-10 lg:right-16 flex flex-col items-center gap-3 opacity-0" id="scroll-indicator">
+          <span class="font-sans text-cream/50 text-xs tracking-[0.4em] uppercase" style="writing-mode:vertical-rl">Scroll</span>
+          <div class="scroll-line w-px h-16 bg-gradient-to-b from-gold to-transparent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ INTRO BAND ═══════════════════════ -->
+    <section class="bg-gold py-5 overflow-hidden">
+      <div class="marquee-track flex gap-16 whitespace-nowrap">
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Fine Dining</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Artisan Cuisine</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Seasonal Ingredients</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Curated Wine</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Intimate Atmosphere</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Fine Dining</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Artisan Cuisine</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Seasonal Ingredients</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Curated Wine</span>
+        <span class="text-charcoal/40">✦</span>
+        <span class="font-serif text-charcoal text-sm tracking-widest italic">Intimate Atmosphere</span>
+        <span class="text-charcoal/40">✦</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT SNIPPET ═══════════════════════ -->
+    <section class="py-32 px-8 lg:px-20 bg-charcoal reveal-section">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <!-- Image block -->
+        <div class="relative reveal-item">
+          <div class="relative overflow-hidden">
+            <img src="images/chef-prep.jpg" 
+                 alt="Chef preparing a dish"
+                 class="w-full h-[600px] object-cover parallax-img" />
+          </div>
+          <!-- Overlapping accent card -->
+          <div class="absolute -bottom-10 -right-8 lg:-right-16 bg-gold p-8 z-10 reveal-item" style="max-width:220px">
+            <p class="font-serif text-charcoal text-3xl font-semibold">12+</p>
+            <p class="font-sans text-charcoal/80 text-sm mt-1">Years Crafting Excellence</p>
+          </div>
+        </div>
+
+        <!-- Text block -->
+        <div class="reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Our Philosophy</span>
+          <h2 class="font-serif text-cream text-5xl lg:text-6xl mt-4 mb-8 leading-tight">A Table Worth <em>Remembering</em></h2>
+          <p class="font-sans text-cream/60 text-base leading-relaxed mb-6">We believe a great meal is more than sustenance — it is memory, emotion, and story woven together on a plate. Every ingredient is sourced with intention, every technique applied with devotion.</p>
+          <p class="font-sans text-cream/60 text-base leading-relaxed mb-10">Our open kitchen bridges the gap between the chef's craft and your curiosity, transforming dinner into theatre.</p>
+          <a href="about.html" class="btn-outline inline-block">Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ SPECIALTIES / FEATURES ═══════════════════════ -->
+    <section class="py-32 bg-cream reveal-section">
+      <div class="max-w-7xl mx-auto px-8 lg:px-20">
+        <div class="text-center mb-20 reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">The Menu</span>
+          <h2 class="font-serif text-charcoal text-5xl lg:text-6xl mt-4 leading-tight">Our Specialties</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+          <!-- Card 1 -->
+          <article class="specialty-card group cursor-pointer reveal-item">
+            <div class="overflow-hidden relative h-80">
+              <img src="images/scallops.jpg"
+                   alt="Seared Scallop dish"
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-all duration-500"></div>
+            </div>
+            <div class="bg-charcoal p-8 border-t-2 border-gold">
+              <span class="text-gold text-xs font-sans tracking-widest uppercase">Signature</span>
+              <h3 class="font-serif text-cream text-2xl mt-3 mb-4">Pan-Seared Scallops</h3>
+              <p class="font-sans text-cream/50 text-sm leading-relaxed">Diver scallops, cauliflower purée, crispy capers, champagne beurre blanc.</p>
+              <div class="mt-6 flex items-center justify-between">
+                <span class="font-serif text-gold text-xl">$42</span>
+                <a href="menu.html" class="text-gold text-sm font-sans tracking-widest uppercase border-b border-gold hover:border-gold-light hover:text-gold-light transition-all">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="specialty-card group cursor-pointer reveal-item" style="margin-top: 60px">
+            <div class="overflow-hidden relative h-80">
+              <img src="images/wagyu.jpg"
+                   alt="Wagyu beef dish"
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-all duration-500"></div>
+            </div>
+            <div class="bg-charcoal p-8 border-t-2 border-gold">
+              <span class="text-gold text-xs font-sans tracking-widest uppercase">Chef's Choice</span>
+              <h3 class="font-serif text-cream text-2xl mt-3 mb-4">A5 Wagyu Striploin</h3>
+              <p class="font-sans text-cream/50 text-sm leading-relaxed">Japanese A5 wagyu, truffle jus, roasted bone marrow, seasonal herbs.</p>
+              <div class="mt-6 flex items-center justify-between">
+                <span class="font-serif text-gold text-xl">$98</span>
+                <a href="menu.html" class="text-gold text-sm font-sans tracking-widest uppercase border-b border-gold hover:border-gold-light hover:text-gold-light transition-all">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="specialty-card group cursor-pointer reveal-item">
+            <div class="overflow-hidden relative h-80">
+              <img src="images/dessert.jpg"
+                   alt="Dessert plate"
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-all duration-500"></div>
+            </div>
+            <div class="bg-charcoal p-8 border-t-2 border-gold">
+              <span class="text-gold text-xs font-sans tracking-widest uppercase">Patisserie</span>
+              <h3 class="font-serif text-cream text-2xl mt-3 mb-4">Valrhona Chocolate Sphere</h3>
+              <p class="font-sans text-cream/50 text-sm leading-relaxed">Dark chocolate shell, salted caramel core, edible gold leaf, vanilla anglaise.</p>
+              <div class="mt-6 flex items-center justify-between">
+                <span class="font-serif text-gold text-xl">$24</span>
+                <a href="menu.html" class="text-gold text-sm font-sans tracking-widest uppercase border-b border-gold hover:border-gold-light hover:text-gold-light transition-all">View →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-20 reveal-item">
+          <a href="menu.html" class="btn-gold-dark">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PARALLAX QUOTE SECTION ═══════════════════════ -->
+    <section class="relative py-48 overflow-hidden reveal-section">
+      <div class="parallax-bg-section absolute inset-0">
+        <img src="images/quote-bg.jpg"
+             alt="Restaurant interior"
+             class="w-full h-full object-cover scale-110 parallax-img-section" />
+        <div class="absolute inset-0 bg-charcoal/80"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto px-8 text-center reveal-item">
+        <div class="text-gold text-5xl font-serif mb-8">"</div>
+        <blockquote class="font-serif text-cream text-3xl lg:text-5xl italic leading-relaxed mb-8">
+          Cooking is not a science but an art — recklessness is more important than caution.
+        </blockquote>
+        <cite class="font-sans text-gold text-sm tracking-widest uppercase not-italic">— Chef Margaux Dubois, Executive Chef</cite>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ STATS ROW ═══════════════════════ -->
+    <section class="py-24 bg-charcoal-light reveal-section">
+      <div class="max-w-7xl mx-auto px-8 lg:px-20 grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+        <div class="reveal-item">
+          <p class="font-serif text-gold text-6xl font-semibold">14</p>
+          <p class="font-sans text-cream/50 text-sm tracking-widest uppercase mt-2">Michelin Stars</p>
+        </div>
+        <div class="reveal-item">
+          <p class="font-serif text-gold text-6xl font-semibold">8K+</p>
+          <p class="font-sans text-cream/50 text-sm tracking-widest uppercase mt-2">Happy Guests</p>
+        </div>
+        <div class="reveal-item">
+          <p class="font-serif text-gold text-6xl font-semibold">42</p>
+          <p class="font-sans text-cream/50 text-sm tracking-widest uppercase mt-2">Menu Items</p>
+        </div>
+        <div class="reveal-item">
+          <p class="font-serif text-gold text-6xl font-semibold">12</p>
+          <p class="font-sans text-cream/50 text-sm tracking-widest uppercase mt-2">Years in Art</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+    <section class="py-32 bg-cream reveal-section">
+      <div class="max-w-7xl mx-auto px-8 lg:px-20">
+        <div class="text-center mb-20 reveal-item">
+          <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">What Guests Say</span>
+          <h2 class="font-serif text-charcoal text-5xl mt-4">Moments Remembered</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-10 reveal-item border-l-4 border-gold">
+            <p class="font-sans text-charcoal/70 leading-relaxed mb-8 italic">"The tasting menu was an absolute revelation. Each course built upon the last — a symphony of flavour, texture and artistry."</p>
+            <div class="flex items-center gap-4">
+              <img src="images/reviewer-james.jpg" alt="James R" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p class="font-sans text-charcoal font-semibold text-sm">James R.</p>
+                <p class="font-sans text-charcoal/40 text-xs">New York Times Critic</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-10 reveal-item border-l-4 border-gold" style="margin-top:30px">
+            <p class="font-sans text-charcoal/70 leading-relaxed mb-8 italic">"Aurel is the rare restaurant that makes you feel like the only guest in the room. Impeccable service, unforgettable food."</p>
+            <div class="flex items-center gap-4">
+              <img src="images/reviewer-sophia.jpg" alt="Sophia L" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p class="font-sans text-charcoal font-semibold text-sm">Sophia L.</p>
+                <p class="font-sans text-charcoal/40 text-xs">Condé Nast Traveller</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-10 reveal-item border-l-4 border-gold">
+            <p class="font-sans text-charcoal/70 leading-relaxed mb-8 italic">"I've dined at three-star restaurants worldwide — Aurel stands among the very best. The wagyu was nothing short of transcendent."</p>
+            <div class="flex items-center gap-4">
+              <img src="images/reviewer-marco.jpg" alt="Marco V" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p class="font-sans text-charcoal font-semibold text-sm">Marco V.</p>
+                <p class="font-sans text-charcoal/40 text-xs">Gourmet World Magazine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA BAND ═══════════════════════ -->
+    <section class="py-24 bg-charcoal reveal-section">
+      <div class="max-w-3xl mx-auto px-8 text-center reveal-item">
+        <span class="font-sans text-gold text-xs tracking-[0.5em] uppercase">Reservations</span>
+        <h2 class="font-serif text-cream text-5xl lg:text-6xl mt-4 mb-6 leading-tight">Secure Your Evening</h2>
+        <p class="font-sans text-cream/60 mb-10">Tables are limited. We recommend booking at least 2 weeks in advance to ensure your preferred date.</p>
+        <a href="booking.html" class="btn-gold">Make a Reservation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="bg-charcoal border-t border-charcoal-mid py-20 px-8 lg:px-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="font-serif text-3xl text-cream tracking-widest">AUREL</a>
+          <p class="font-sans text-cream/50 text-sm leading-relaxed mt-4 max-w-xs">A sanctuary of fine dining on the corner of Madison and 54th. Where every evening becomes a memory.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" class="text-gold text-sm font-sans hover:text-gold-light transition-colors">Instagram</a>
+            <span class="text-charcoal-mid">|</span>
+            <a href="#" class="text-gold text-sm font-sans hover:text-gold-light transition-colors">Twitter</a>
+            <span class="text-charcoal-mid">|</span>
+            <a href="#" class="text-gold text-sm font-sans hover:text-gold-light transition-colors">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-serif text-cream text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Home</a></li>
+            <li><a href="menu.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Menu</a></li>
+            <li><a href="about.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Our Story</a></li>
+            <li><a href="booking.html" class="font-sans text-cream/50 text-sm hover:text-gold transition-colors">Reservations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-serif text-cream text-lg mb-6">Visit Us</h4>
+          <address class="not-italic space-y-2">
+            <p class="font-sans text-cream/50 text-sm">54 Madison Avenue</p>
+            <p class="font-sans text-cream/50 text-sm">New York, NY 10022</p>
+            <p class="font-sans text-cream/50 text-sm mt-4">+1 (212) 555-0191</p>
+            <p class="font-sans text-cream/50 text-sm">hello@aurel.dining</p>
+          </address>
+        </div>
+      </div>
+      <div class="border-t border-charcoal-mid pt-8 flex flex-col lg:flex-row items-center justify-between gap-4">
+        <p class="font-sans text-cream/30 text-xs">© 2025 Aurel Fine Dining. All rights reserved.</p>
+        <p class="font-sans text-cream/30 text-xs">Privacy Policy · Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart & Checkout Structures -->
+  <div id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="font-serif text-cream text-xl">Your Order</h3>
+      <button id="cart-close" class="text-cream/50 hover:text-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y1="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-items-container" id="cart-items">
+      <p class="text-cream/30 text-center py-20 font-sans">Your basket is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="flex justify-between mb-4">
+        <span class="text-cream/50 font-sans">Subtotal</span>
+        <span class="text-cream font-serif text-xl" id="cart-total">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn-gold w-full flex items-center justify-center gap-3 disabled:opacity-50" disabled>
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="checkout-overlay">
+    <div class="checkout-modal reveal-item">
+      <button id="modal-close" class="absolute top-4 right-4 text-charcoal/50 hover:text-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y1="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div id="checkout-form-container">
+        <h2 class="font-serif text-charcoal text-3xl mb-2">Finalise Order</h2>
+        <p class="font-sans text-charcoal/50 text-sm mb-10">Delivery or Collection within 45 minutes.</p>
+        
+        <form id="checkout-form" class="space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="float-label-group">
+              <input type="text" id="order-first-name" class="float-input" placeholder=" " required />
+              <label for="order-first-name" class="float-label">First Name</label>
+            </div>
+            <div class="float-label-group">
+              <input type="text" id="order-last-name" class="float-input" placeholder=" " required />
+              <label for="order-last-name" class="float-label">Last Name</label>
+            </div>
+          </div>
+          <div class="float-label-group">
+            <input type="text" id="order-address" class="float-input" placeholder=" " required />
+            <label for="order-address" class="float-label">Delivery Address</label>
+          </div>
+          <div class="float-label-group">
+            <input type="tel" id="order-phone" class="float-input" placeholder=" " required />
+            <label for="order-phone" class="float-label">Phone Number</label>
+          </div>
+          <button type="submit" class="btn-gold w-full text-center">Place Order</button>
+        </form>
+      </div>
+
+      <div id="order-success" class="hidden text-center py-12">
+        <div class="text-gold text-5xl mb-6">✓</div>
+        <h3 class="font-serif text-charcoal text-3xl mb-4">Order Received</h3>
+        <p class="font-sans text-charcoal/60">Your dinner is being prepared. We'll alert you when it's on its way.</p>
+        <button id="success-close" class="btn-charcoal mt-8">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

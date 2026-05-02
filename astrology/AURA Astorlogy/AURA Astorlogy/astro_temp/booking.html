@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Aura Astrology Expert Guidance</title>
+    <meta name="description" content="Schedule your personalized astrology consultation. Provide your birth details for a deep-dive reading on career, marriage, health, and life path.">
+    <meta name="keywords" content="Astrology Consultation, Book Astrologer, Kundli Reading Booking, Online Jyotish, Personal Astro Session">
+    
+    <meta property="og:title" content="Consult the Stars | Aura Astrology Booking">
+    <meta property="og:description" content="Your life's blueprint awaits. Book your session for precision-guided intuition.">
+    <meta property="og:image" content="assets/consult-cosmic.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icon_aries.png" type="image/png">
+</head>
+<body>
+    <div class="astro-bg-layer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+    <header>
+        <a href="index.html" class="logo">Aura Astrology</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="horoscope.html">Horoscope</a></li>
+                <li><a href="booking.html" class="active">Consult</a></li>
+                <li><a href="blog.html">Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <main>
+        <div class="page-hero">
+            <img src="assets/consult-cosmic.png" alt="" class="page-hero-bg">
+            <div class="sparkle-field"></div>
+            <div class="zodiac-deco left"></div>
+            <div class="zodiac-deco right"></div>
+            <div class="kundli-deco" style="left: 8%; bottom: 10%;"></div>
+            <div class="page-hero-content">
+                <div class="divider" style="color: #D4AF37;">✦</div>
+                <h2>Book Your Consultation</h2>
+                <p>Provide your exact birth details for a precise celestial blueprint reading.</p>
+            </div>
+        </div>
+
+        <section class="contact-section bg-cream" style="background-image: url('assets/booking_bg.png'); background-size: cover; background-position: center; position: relative;">
+            <div style="position: absolute; inset: 0; background: rgba(252, 249, 245, 0.85); z-index: 0;"></div>
+            <div class="contact-kundli" style="right: -150px; top: -100px;"></div>
+            <div class="contact-kundli" style="left: -150px; bottom: -100px; animation-direction: reverse;"></div>
+            
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="info-card">
+                        <div class="info-icon">🔔</div>
+                        <div><h4>Call / WhatsApp</h4><p>+91 98765 43210</p><p>Available 10 AM - 8 PM IST</p></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕉</div>
+                        <div><h4>Email Us</h4><p>guidance@aura-astro.com</p><p>Response within 24 hours</p></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔱</div>
+                        <div><h4>Consultation Fee</h4><p>Starting from ₹2,100</p><p>UPI / Bank Transfer / Cash</p></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🪷</div>
+                        <div><h4>Available In</h4><p>In-Person, Video Call, Phone</p><p>Hindi & English</p></div>
+                    </div>
+                </div>
+
+                <div class="contact-wrapper reveal">
+                    <div class="divider">✦</div>
+                    <h2>Birth Details Form</h2>
+                    <p style="text-align: center; margin-bottom: 2rem;">Provide exact birth data. Precision is paramount — even a 5-minute difference changes the entire Dasha sequence.</p>
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Consultation Request Sent Successfully!');">
+                        <div class="form-row">
+                            <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" required placeholder="Your Legal Name"></div>
+                            <div class="form-group"><label for="gender">Gender</label>
+                                <select id="gender" required><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option></select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label for="phone">Phone (WhatsApp)</label><input type="tel" id="phone" required placeholder="+91 0000000000"></div>
+                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="your@email.com"></div>
+                        </div>
+                        <div class="form-group full"><label for="service">Service Required</label>
+                            <select id="service" required>
+                                <option value="kundli">Kundli Creation & Analysis</option>
+                                <option value="career">Career Analysis</option>
+                                <option value="matchmaking">Marriage Matchmaking (Guna Milan)</option>
+                                <option value="gemstone">Gemstone Recommendation</option>
+                                <option value="pooja">Remedial Pooja / Shanti</option>
+                                <option value="vastu">Vastu Shastra Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label for="dob">Date of Birth</label><input type="date" id="dob" required></div>
+                            <div class="form-group">
+                                <label for="time">Exact Time of Birth</label>
+                                <input type="time" id="time" required>
+                                <small style="display: block; font-size: 0.7rem; color: var(--accent-gold); margin-top: 0.3rem;">◆ Please use 24-hour format or double check AM/PM.</small>
+                            </div>
+                        </div>
+                        <div class="form-group full"><label for="place">Place of Birth (City, State, Country)</label><input type="text" id="place" required placeholder="E.g. Jodhpur, Rajasthan, India"></div>
+                        <div class="form-group full"><label for="query">Describe Your Problem / Question</label><textarea id="query" rows="4" placeholder="Career stuck? Health issues? Marriage delays? Describe in detail..."></textarea></div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-gold" style="padding: 1.2rem 3rem; width: 100%;">◆ Submit Consultation Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="#" class="floating-whatsapp" title="WhatsApp Us">🪷</a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col reveal">
+                <div class="footer-logo">Aura Astrology</div>
+                <p>Decoding the celestial blueprint of your soul. With over 20 years of expertise in Vedic Jyotish, we provide precision-guided intuition to help you navigate life's transits.</p>
+                <div class="footer-social">
+                    <a href="#" title="Instagram">📸</a>
+                    <a href="#" title="YouTube">▶️</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="Facebook">📘</a>
+                </div>
+            </div>
+            <div class="footer-col reveal">
+                <h4>Explore</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About the Pandit</a>
+                    <a href="horoscope.html">Daily Horoscope</a>
+                    <a href="services.html">All Services</a>
+                    <a href="booking.html">Book Consultation</a>
+                    <a href="blog.html">Cosmic Insights</a>
+                    <a href="testimonials.html">Success Stories</a>
+                </div>
+            </div>
+            <div class="footer-col reveal">
+                <h4>Our Core Expertise</h4>
+                <div class="footer-links">
+                    <a href="faq.html">FAQ</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Disclaimer</a>
+                    <a href="services.html">Lagna Kundli Analysis</a>
+                    <a href="services.html">Ashtakoot Matchmaking</a>
+                </div>
+            </div>
+            <div class="footer-col reveal">
+                <h4>Contact Divine Guidance</h4>
+                <div class="contact-item">
+                    <span class="icon">🔱</span>
+                    <p>108 Celestial Plaza, MG Road, New Delhi, India 110001</p>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🔔</span>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🕉</span>
+                    <p>guidance@aura-astro.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclaimer reveal">
+            <p><strong>Disclaimer:</strong> Astrology is a guiding science based on planetary positions. While we provide high-precision readings based on Vedic texts, results may vary. We do not guarantee absolute outcomes for specific life events.</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aura Vedic Astrology. Crafted with Divine Intent for Spiritual Growth.</p>
+        </div>
+    </footer>
+    <!-- Aggressive SVG Transparency Engine -->
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+      <filter id="remove-white">
+        <feColorMatrix type="matrix" values="1 0 0 0 0
+                                             0 1 0 0 0
+                                             0 0 1 0 0
+                                             -1.5 -1.5 -1.5 1 3.5" />
+      </filter>
+    </svg>
+    <script src="script.js"></script>
+</body>
+</html>

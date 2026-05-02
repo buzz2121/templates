@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | SORELLA GEMS High Jewellery</title>
+    <!-- Locked Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --bg: #F8F5F0;
+            --charcoal: #2B2B2B;
+            --body: #5A5A5A;
+            --gold: #C6A972;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--body); line-height: 1.8; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1500px; margin: 0 auto; padding: 0 100px; }
+        
+        @media (min-width: 769px) {
+            .hero { height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+            .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('./craftsmanship_detail_1777522037441.png') center/cover; animation: slowZoom 20s infinite alternate; }
+            .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, var(--bg) 30%, transparent 100%); opacity: 0.9; z-index: 2; }
+            
+            .chapter { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 100px 0; border-bottom: 1px solid rgba(0,0,0,0.03); }
+            .chapter-year { font-family: 'Cinzel', serif; font-size: 120px; color: var(--gold); opacity: 0.1; position: absolute; top: 50%; transform: translateY(-50%); left: 100px; z-index: 1; pointer-events: none; }
+            .chapter-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 10; width: 100%; }
+            .chapter-img { width: 100%; height: 700px; object-fit: cover; box-shadow: 0 40px 100px rgba(0,0,0,0.1); }
+            .chapter-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); padding: 80px; border-left: 5px solid var(--gold); box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        }
+
+        .heritage-axis { position: fixed; left: 60px; top: 0; width: 1px; height: 100vh; background: var(--gold); opacity: 0.2; z-index: 5; }
+
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+
+        .chapter-title { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--charcoal); margin-bottom: 30px; }
+
+        @media (max-width: 768px) {
+            .heritage-axis { display: none; }
+            .container { padding: 0 25px !important; }
+
+            /* Hero */
+            header {
+                min-height: auto !important;
+                padding: 100px 0 60px !important;
+            }
+            header div[style*="width: 60%"] {
+                display: none !important;
+            }
+            header h1 {
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+            }
+            header div[style*="max-width: 600px"] {
+                border-left: none !important;
+                padding-left: 0 !important;
+                text-align: center !important;
+            }
+            header div[style*="display: flex; gap: 50px"] {
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+            }
+            header p[style*="font-size: 20px"] {
+                font-size: 16px !important;
+            }
+
+            /* Chapters */
+            .chapter {
+                min-height: auto !important;
+                padding: 60px 0 !important;
+            }
+            .chapter-year {
+                position: relative !important;
+                left: 0 !important;
+                right: auto !important;
+                top: auto !important;
+                transform: none !important;
+                font-size: 48px !important;
+                margin-bottom: 20px !important;
+                opacity: 0.3 !important;
+            }
+            .chapter-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+            .chapter-img {
+                height: 300px !important;
+                width: 100% !important;
+            }
+            .chapter-card {
+                padding: 30px !important;
+                border-left: 3px solid var(--gold) !important;
+                border-right: none !important;
+                text-align: left !important;
+            }
+            .chapter-title {
+                font-size: 28px !important;
+            }
+
+            /* CTA Section */
+            .section-padding h2 {
+                font-size: 32px !important;
+            }
+            .section-padding div[style*="height: 100px"] {
+                height: 50px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">Sorella Gems</a>
+        
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html" class="active">Our Story</a></li>
+                <li><a href="bespoke.html">Bespoke</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="cta-button">
+                Book Consultation
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="bespoke.html">Bespoke</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: 40px; width: auto;">Book Consultation</a>
+    </div>
+
+    <div class="heritage-axis"></div>
+
+    <!-- 1. HERO (Restored to Background Style) -->
+    <header style="min-height: 100vh; background: #F8F5F0; display: flex; align-items: center; position: relative; overflow: hidden; padding: 120px 0 100px;">
+        <div style="position: absolute; right: 0; top: 0; width: 60%; height: 100%; background-image: url('./craftsmanship_detail_1777522037441.png'); background-size: cover; background-position: center; z-index: 1; mask-image: linear-gradient(to right, transparent, black 45%); -webkit-mask-image: linear-gradient(to right, transparent, black 45%);"></div>
+        <div class="container" style="position: relative; z-index: 2; width: 100%;">
+            <div style="max-width: 600px; padding-left: 40px; border-left: 1px solid var(--gold);">
+                <span style="font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 25px;">The House Chronology</span>
+                <h1 style="font-family: 'Cinzel', serif; font-size: 72px; line-height: 1.1; margin-bottom: 30px; color: var(--charcoal);">The Legacy of<br>Brilliance</h1>
+                <div style="width: 60px; height: 1px; background: var(--gold); margin-bottom: 40px;"></div>
+                <p style="font-size: 20px; color: #333; max-width: 480px; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.6; margin-bottom: 50px;">A journey through the architectural mathematical purity of light.</p>
+                
+                <div style="display: flex; gap: 50px;">
+                    <div>
+                        <h4 style="font-size: 10px; letter-spacing: 3px; margin-bottom: 12px; color: var(--gold); text-transform: uppercase;">EST.</h4>
+                        <p style="font-size: 14px; color: var(--charcoal); font-weight: 500;">1924</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 10px; letter-spacing: 3px; margin-bottom: 12px; color: var(--gold); text-transform: uppercase;">ORIGIN</h4>
+                        <p style="font-size: 14px; color: var(--charcoal); font-weight: 500;">Place Vendôme, Paris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="chapter">
+        <div class="chapter-year">1984</div>
+        <div class="container">
+            <div class="chapter-grid mobile-stack">
+                <div class="mobile-full-width"><img src="./boutique_interior_1777522089820.png" class="chapter-img"></div>
+                <div class="chapter-card mobile-full-width">
+                    <span style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">The Founding</span>
+                    <h2 class="chapter-title">The Paris Atelier</h2>
+                    <p>Julian Sorella Gems opens the first sanctuary on the Rue de la Paix. A dedication to the mathematical precision of stone setting and the architectural flow of light began here, setting the standard for the decades to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER II: 1995 -->
+    <section class="chapter" style="background: var(--white);">
+        <div class="chapter-year" style="left: auto; right: 100px;">1995</div>
+        <div class="container">
+            <div class="chapter-grid" style="grid-template-columns: 1fr 1.2fr;">
+                <div class="chapter-card" style="border-left: 0; border-right: 5px solid var(--gold); text-align: right;">
+                    <span style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">High Artistry</span>
+                    <h2 class="chapter-title">Royal Recognition</h2>
+                    <p>The house is commissioned to design the 'Soleil' tiara for European nobility. This milestone cemented Sorella Gems's status as a global authority in high-jewellery artistry and royal provenance.</p>
+                </div>
+                <div><img src="./diamond_palace_necklace_lux_1777526543627.png" class="chapter-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER III: 2012 -->
+    <section class="chapter">
+        <div class="chapter-year">2012</div>
+        <div class="container">
+            <div class="chapter-grid">
+                <div><img src="./emerald_drop_earrings_lux_1777526574822.png" class="chapter-img"></div>
+                <div class="chapter-card">
+                    <span style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">Conscious Luxury</span>
+                    <h2 class="chapter-title">Ethical Mastery</h2>
+                    <p>Leading the industry into a new era. Sorella Gems becomes one of the first maisons to implement 100% GIA-certified, ethically traceable stone sourcing across its entire global portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER IV: 2026 -->
+    <section class="chapter" style="background: var(--white);">
+        <div class="chapter-year" style="left: auto; right: 100px;">2026</div>
+        <div class="container">
+            <div class="chapter-grid" style="grid-template-columns: 1fr 1.2fr;">
+                <div class="chapter-card" style="border-left: 0; border-right: 5px solid var(--gold); text-align: right;">
+                    <span style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">The Future</span>
+                    <h2 class="chapter-title">Global Concierge</h2>
+                    <p>Bringing the Place Vendôme experience to the palm of every collector. The expansion into a global digital flagship era allows the Maison to assist its community with unprecedented intimacy.</p>
+                </div>
+                <div><img src="./elite_boutique_concierge_lux.png" class="chapter-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section-padding" style="text-align: center; position: relative; z-index: 10; background: var(--bg);">
+        <div class="container">
+            <div style="width: 1px; height: 100px; background: var(--gold); margin: 0 auto 60px;"></div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 64px; color: var(--charcoal); margin-bottom: 50px;">Begin Your Story</h2>
+            <div class="mobile-stack" style="display: flex; gap: 30px; justify-content: center;">
+                <a href="collections.html" class="btn btn-outline mobile-full-width">Explore Collections</a>
+                <a href="bespoke.html" class="btn btn-outline mobile-full-width">Book Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTER FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo footer-logo">Sorella Gems</a>
+                    <p style="max-width: 300px;">Crafting timeless luxury jewellery that celebrates the artistry of life.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="collections.html#bridal">Bridal</a></li>
+                        <li><a href="collections.html#diamond">Diamonds</a></li>
+                        <li><a href="collections.html#gold">Gold Classics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html#craft">Craftsmanship</a></li>
+                        <li><a href="contact.html">Boutiques</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Concierge</h4>
+                    <p style="font-size: 13px; margin-bottom: 20px;">Join our exclusive circle for early access.</p>
+                    <a href="bespoke.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 10px;">Inquire Now</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Sorella Gems JEWELLERY HOUSE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>
