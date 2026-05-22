@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @workspace/nox-voyages run build",
+  "outputDirectory": "artifacts/nox-voyages/dist/public",
+  "framework": "vite"
+}
