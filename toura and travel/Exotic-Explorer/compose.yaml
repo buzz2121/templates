@@ -1,0 +1,10 @@
+services:
+  workspace:
+    image: workspace
+    build:
+      context: Exotic-Explorer
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3005:3005

@@ -1,0 +1,200 @@
+Act as a World-Class Luxury Travel Brand Designer, Creative Director, and Senior Frontend Architect.
+
+Build a COMPLETE, PRODUCTION-READY, MULTI-PAGE website for a HIGH-END TOURS & TRAVEL COMPANY.
+
+⚠️ OUTPUT MUST FEEL LIKE A $100K+ AGENCY PRODUCT — CINEMATIC, IMMERSIVE, NON-TEMPLATE.
+
+-----------------------------------
+🎯 BRAND POSITIONING
+-----------------------------------
+Brand Name: "NOX VOYAGES"
+Tagline: "Explore the World Beyond Limits"
+
+Audience:
+- Affluent travelers
+- International luxury tourists
+- Honeymoon / curated experience seekers
+- High-ticket adventure clients
+
+Brand Feel:
+- Dark luxury + futuristic elegance
+- Mysterious, cinematic, elite
+- NOT bright, NOT generic travel UI
+
+-----------------------------------
+🎨 DESIGN SYSTEM (DARK + UNIQUE)
+-----------------------------------
+Colors:
+- Primary: Obsidian Black (#050505)
+- Secondary: Graphite (#121212)
+- Accent: Liquid Gold (#D4AF37)
+- Highlight: Neon Teal Glow (#00E5D4)
+- Soft Text: Warm Gray (#CFCFCF)
+
+Typography:
+- Headings: Playfair Display / Cinzel (luxury serif)
+- Body: Inter / Poppins
+- Strong hierarchy + spacious layout
+
+UI Style:
+- Glassmorphism (dark)
+- Gradient glows + depth layering
+- Soft reflections + subtle noise texture
+- Premium hover physics (scale, glow, blur)
+
+-----------------------------------
+📄 REQUIRED PAGES
+-----------------------------------
+1. Home  
+2. Destinations  
+3. Tour Packages  
+4. Experiences (Luxury/Adventure)  
+5. About Brand  
+6. Testimonials  
+7. Contact / Booking  
+
+⚠️ Each page must feel unique but visually consistent.
+
+-----------------------------------
+✨ HOME PAGE (HERO FOCUS)
+-----------------------------------
+- Fullscreen cinematic video/image (travel landscapes)
+- Dark overlay + gradient lighting
+- Heading:
+  “Journey Into Extraordinary”
+- Subtext: premium storytelling
+- CTA:
+  - Explore Destinations
+  - Plan Your Journey
+- Floating UI + scroll indicator
+- Smooth entry animations
+
+Sections:
+- Featured Destinations (interactive cards)
+- Luxury Experiences (horizontal scroll)
+- Why Choose Us (icons + stats)
+- Testimonials preview
+- CTA banner
+
+-----------------------------------
+🌍 DESTINATIONS PAGE
+-----------------------------------
+- Grid with large immersive cards
+- Each:
+  - Image
+  - Location name
+  - Short description
+- Hover:
+  - Zoom + dark glass overlay + CTA
+- Filters (continent/type)
+
+-----------------------------------
+🧳 TOUR PACKAGES PAGE
+-----------------------------------
+- Premium cards:
+  - Package name
+  - Duration
+  - Price
+  - Highlights
+- Hover → expand / glow
+- Sorting/filter system
+
+-----------------------------------
+✨ EXPERIENCES PAGE
+-----------------------------------
+Categories:
+- Luxury Retreats
+- Adventure Trips
+- Cultural Tours
+- Honeymoon Packages
+
+- Horizontal scroll sections
+- Parallax backgrounds
+- Immersive storytelling blocks
+
+-----------------------------------
+🏢 ABOUT PAGE
+-----------------------------------
+- Brand story (cinematic text blocks)
+- Mission, vision
+- Animated stats:
+  - Countries covered
+  - Clients served
+  - Years experience
+
+-----------------------------------
+💬 TESTIMONIALS PAGE
+-----------------------------------
+- Carousel + grid hybrid
+- Glass cards
+- Client names + ratings
+- Premium review styling
+
+-----------------------------------
+📞 CONTACT / BOOKING PAGE
+-----------------------------------
+- Dark glassmorphism form
+Fields:
+- Name
+- Email
+- Destination interest
+- Travel dates
+- Budget
+- Message
+
+- CTA: “Start Your Journey”
+- Embedded styled map
+- Contact info
+
+-----------------------------------
+🎬 ANIMATIONS
+-----------------------------------
+- Smooth scrolling
+- Scroll-triggered animations (fade, slide, scale)
+- Parallax (hero + sections)
+- Hover micro-interactions
+- Glow + depth transitions
+- Page transitions (fade/slide between pages)
+- Subtle loading animation
+
+-----------------------------------
+📱 RESPONSIVENESS
+-----------------------------------
+- Mobile-first
+- Perfect spacing across devices
+- Touch-optimized interactions
+
+-----------------------------------
+⚙️ TECH REQUIREMENTS
+-----------------------------------
+- Multi-page structure (separate HTML files OR structured routing)
+- Clean, modular code
+- Inline CSS/JS OR well-structured internal styling
+- Only Google Fonts allowed
+- Optimized assets (use high-quality URLs)
+
+-----------------------------------
+🔍 SEO
+-----------------------------------
+- Unique meta title + description per page
+- Semantic HTML
+- Alt tags for images
+
+-----------------------------------
+🚫 STRICT RULES
+-----------------------------------
+- NO generic travel templates
+- NO bright touristy UI
+- NO cluttered layouts
+- NO weak typography
+- NO broken navigation or responsiveness
+
+-----------------------------------
+🎯 FINAL OUTPUT
+-----------------------------------
+Deliver a COMPLETE multi-page website that:
+- Feels like a premium international travel brand
+- Uses dark, cinematic, unique UI
+- Has immersive interactions + smooth animations
+- Maintains design consistency across all pages
+- Impresses instantly with a luxury “wow” factor

@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "E21P5ZwVwpKabe_Qy3Tn7"
+uri = "file://artifacts/nox-voyages/public/hero.png"
+type = "image"
+title = "Cinematic dark luxury travel hero"
+
+[[generated]]
+id = "oMFj-gWFedEIIdBR6qJSd"
+uri = "file://artifacts/nox-voyages/public/maldives.png"
+type = "image"
+title = "Maldives overwater bungalows"
+
+[[generated]]
+id = "Xn1gXWaJ7tK032Inq7jxq"
+uri = "file://artifacts/nox-voyages/public/santorini.png"
+type = "image"
+title = "Santorini luxury cliffside"
+
+[[generated]]
+id = "iprqvga2nQSsTHB6SGaNW"
+uri = "file://artifacts/nox-voyages/public/bali.png"
+type = "image"
+title = "Bali jungle luxury retreat"
+
+[[generated]]
+id = "nydKWuK0TFhB-kN1Ma8Qz"
+uri = "file://artifacts/nox-voyages/public/patagonia.png"
+type = "image"
+title = "Patagonia epic landscape"
+
+[[generated]]
+id = "RVHnu851Mc5zBSZ7mWrpf"
+uri = "file://artifacts/nox-voyages/public/morocco.png"
+type = "image"
+title = "Morocco desert luxury camp"
+
+[[generated]]
+id = "_EByIuvOZBlu2GFy3FVoO"
+uri = "file://artifacts/nox-voyages/public/iceland.png"
+type = "image"
+title = "Iceland black sand beach"
+
+[[generated]]
+id = "Qk85stGI9VpNHEUnUReda"
+uri = "file://artifacts/nox-voyages/public/kyoto.png"
+type = "image"
+title = "Kyoto luxury ryokan"
+
+[[generated]]
+id = "zd4NP5viKybTrFbiomy1D"
+uri = "file://artifacts/nox-voyages/public/amalfi.png"
+type = "image"
+title = "Amalfi coast luxury yacht"
+
+[[generated]]
+id = "WlWJdtG2DiQPB0ikdFek0"
+uri = "file://artifacts/nox-voyages/public/retreats.png"
+type = "image"
+title = "Luxury retreats lifestyle"
